@@ -34,6 +34,49 @@ function clearPages(pages) {
   });
 }
 
+// ------------------------------------
+//    AREA CHARTS - Show map
+// ------------------------------------
+document.querySelector('#area_map_button').click(function () {
+  Helpers.openMap();
+});
+
+// ------------------------------------
+//    AREA CHARTS - Build drowpdown
+// ------------------------------------
+
+var areaSelectList = document.getElementById('area');
+// wecOptGroups is an array with label, array of data pairs
+for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
+  // create an optgroup element and add the label
+  var optGroup = document.createElement('optgroup');
+  optGroup.label = Helpers.wecOptGroups[i][0];
+  areaSelectList.appendChild(optGroup);
+  // get the array of options for the group and its length
+  var arrayOptions = Helpers.wecOptGroups[i][1];
+  var numberOfOptions = arrayOptions.length;
+  for (var j = 0; j < numberOfOptions; j++) {
+    var newOption;// = document.createElement('option');
+    // get each value/text pair
+    var subarrayOptions = arrayOptions[j];
+    for (var k = 0; k < 2; k++) {
+      // only add option when k is even
+      if (k % 2 == 0) {
+        if (i == 0 && j == 0 && k == 0) {
+          // fist one is default
+          newOption = new Option(subarrayOptions[k + 1], subarrayOptions[k], true);
+        } else {
+          newOption = new Option(subarrayOptions[k + 1], subarrayOptions[k]);
+        }
+      }
+    }
+    areaSelectList.appendChild(newOption);
+  }
+}
+
+
+
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">

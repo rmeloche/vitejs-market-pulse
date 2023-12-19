@@ -91,6 +91,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.btn-small {
+  /* font-family: Montserrat; */
+  font-size: 12px;
+  color: white;
+  background-color: #820263;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color: #f7f7ff;
