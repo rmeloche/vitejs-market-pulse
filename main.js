@@ -3,6 +3,9 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
+const appDiv = document.getElementById('app-title');
+appDiv.innerHTML = '<h1>Windsor-Essex County Market Pulse</h1>';
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
