@@ -7,8 +7,13 @@ import { setupCounter } from './counter.js'
 const appDiv = document.getElementById('app-title');
 appDiv.innerHTML = '<h1>Windsor-Essex County Market Pulse</h1>';
 
+
 var pageNames = ["home", "area-charts", "styles-price-ranges", "custom"];
 var namespace = "mktpls";
+
+function pageNameSelector(pageName, type) {
+  return document.querySelector(["#" + namespace, pageName, type].join("-"));
+}
 
 var pages = pageNames.map(function (pageName) {
   return {
@@ -18,19 +23,15 @@ var pages = pageNames.map(function (pageName) {
 });
 
 pages.forEach(function (page) {
-  page.nav.click(function () {
+  page.nav.addEventListener('click', () => (function () {
     clearPages(pages);
-    page.div.show();
-  });
+    page.div.style.display = "block";
+  }));
 });
-
-function pageNameSelector(pageName, type) {
-  return $(["#" + namespace, pageName, type].join("-"));
-}
 
 function clearPages(pages) {
   pages.forEach(function (page) {
-    page.div.hide();
+    page.div.style.display = "none";
   });
 }
 
