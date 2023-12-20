@@ -60,7 +60,7 @@ for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
       // only add option when k is even
       if (k % 2 == 0) {
         if (i == 0 && j == 0 && k == 0) {
-          // fist one is default
+          // first one is default
           newOption = new Option(subarrayOptions[k + 1], subarrayOptions[k], true);
         } else {
           newOption = new Option(subarrayOptions[k + 1], subarrayOptions[k]);
