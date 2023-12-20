@@ -27,10 +27,11 @@ var pages = pageNames.map(function (pageName) {
 });
 
 pages.forEach(function (page) {
-  page.nav.addEventListener('click', () => (function () {
+  page.nav.addEventListener('click', function () {
+    window.console.log("menu link was clicked!");
     clearPages(pages);
     page.div.style.display = "block";
-  }));
+  })
 });
 
 function clearPages(pages) {
