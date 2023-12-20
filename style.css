@@ -91,6 +91,17 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.btn {
+  /* font-family: 'Libre Franklin', sans-serif; */
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  /*Montserrat;*/
+  font-size: 16px;
+  color: white;
+  background-color: #083D77;
+  /* border-color: #820263; */
+}
+
 .btn-small {
   /* font-family: Montserrat; */
   font-size: 12px;
