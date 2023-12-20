@@ -7,12 +7,16 @@ import { setupCounter } from './counter.js'
 const appDiv = document.getElementById('app-title');
 appDiv.innerHTML = '<h1>Windsor-Essex County Market Pulse</h1>';
 
+// --------------------------
+//  Show/Hide App Sections
+// --------------------------
 
-var pageNames = ["home", "area-charts", "styles-price-ranges", "custom"];
+var pageNames = ["area-charts", "styles-price-ranges", "custom"];
 var namespace = "mktpls";
 
 function pageNameSelector(pageName, type) {
-  return document.querySelector(["#" + namespace, pageName, type].join("-"));
+  var element = document.getElementById([namespace, pageName, type].join("-"));
+  return element;
 }
 
 var pages = pageNames.map(function (pageName) {
@@ -73,7 +77,7 @@ for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
 
 
 
-
+/*
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -92,4 +96,4 @@ document.querySelector('#app').innerHTML = `
   </div>
 `
 
-setupCounter(document.querySelector('#counter'))
+setupCounter(document.querySelector('#counter')) */
