@@ -40,6 +40,12 @@ function clearPages(pages) {
   });
 }
 
+// ------------------------------------------
+// Hide Price Ranges and Custom on page load
+// -------------------------------------------
+// Set the display property of the element to none using CSS
+document.getElementById("mktpls-styles-price-ranges-div").style.display = "none";
+document.getElementById("mktpls-custom-div").style.display = "none";
 
 // ------------------------------------
 //    AREA CHARTS - Build drowpdown
@@ -95,4 +101,12 @@ document.querySelector('#app').innerHTML = `
   </div>
 `
 
-setupCounter(document.querySelector('#counter')) */
+setupCounter(document.querySelector('#counter'))
+
+
+// Remove the display property after the page loads using the DOMContentLoaded event
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("myElement").style.display = "block";
+});
+
+*/
