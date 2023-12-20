@@ -41,8 +41,6 @@ function clearPages(pages) {
 }
 
 
-
-
 // ------------------------------------
 //    AREA CHARTS - Build drowpdown
 // ------------------------------------
