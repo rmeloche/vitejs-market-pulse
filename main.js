@@ -35,13 +35,6 @@ function clearPages(pages) {
 }
 
 
-// ------------------------------------
-//    AREA CHARTS - Show map
-// ------------------------------------
-document.querySelector('area_map_button').addEventListener('click', () => {
-  window.open('https://wecarmap.com', '_blank');
-  //Helpers.openMap();
-});
 
 
 // ------------------------------------
