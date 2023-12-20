@@ -29,10 +29,12 @@
     <p class="words">
       Select an area to generate charts
     </p>
-
-    <select id="area"></select>
-    &nbsp;
+    <select id="area"></select>&nbsp;
     <a id="area_map_link" class="btn-small" href="https://wecarmap.com" target="_blank">Area Map</a>
+
+    <!-- divs for charts -->
+    <div style="width: 800px;"><canvas id="market_activity_chart"></canvas></div>
+
   </div>
 
   <!-- STYLES AND PRICE RANGES -->
@@ -61,6 +63,7 @@
   <!-- <script type="module" src="dimensions.js"></script> -->
   <script type="module" src="js/acquisitions.js"></script>
   <script type="module" src="/main.js"></script>
+  <script type="module" src="js/chart-market-activity.js"></script>
 
 
 </body>
