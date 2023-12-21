@@ -9,7 +9,7 @@ function initChart() {
     //query.setQuery('select *');
     query.setQuery('select A, G, H');
     query.send(function (response) {
-        handleQueryResponse(response);
+        activityData = handleQueryResponse(response);
     });
 }
 
@@ -18,28 +18,22 @@ function handleQueryResponse(response) {
     var data = response.getDataTable();
     var columns = data.getNumberOfColumns();
     var rows = data.getNumberOfRows();
-    window.console.log(data.toJSON());
 
     // put data in json format
     var dataj = JSON.parse(data.toJSON());
-    window.console.log(dataj.cols[0].label);
 
     // get the labels from the json data 
-    const labels = [];
+    var labels = [];
     for (var c = 1; c < dataj.cols.length; c++) {
         if (dataj.cols[c].label != "") {
             labels.push(dataj.cols[c].label);
         }
 
     }
-    window.console.log("Labels: " + labels);
-
     const datasets = [];
-    window.console.log(dataj.rows.length);
-    for (i = 0; i < dataj.rows.length; i++) {
+    for (var i = 0; i < dataj.rows.length; i++) {
         const series_data = [];
-        window.console.log("hello? " + dataj.rows[i].c.length);
-        for (j = 1; j < dataj.rows[i].c.length; j++) {
+        for (var j = 1; j < dataj.rows[i].c.length; j++) {
             if (dataj.rows[i].c[j] != null) {
                 if (dataj.rows[i].c[j].v != null) {
                     series_data.push(dataj.rows[i].c[j].v);
@@ -49,26 +43,31 @@ function handleQueryResponse(response) {
             }
 
         }
-        window.console.log("series_data for " + i + ":" + series_data);
 
         const colors = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 206, 86)', 'rgb(153, 102, 255)'];
         var dataset = {
             label: dataj.rows[i].c[0].v,
-            backgroundColor: colors[i],
-            borderColor: colors[i],
+            //backgroundColor: colors[i],
+            //borderColor: colors[i],
             data: series_data
         }
 
         datasets.push(dataset);
 
     }
-    console.log(datasets);
+    const chartdata = {
+        labels: labels,
+        datasets: datasets
+    };
+    return chartdata;
 }
 
+export var activityData;
 
 
 
 
+/*
 export const activityData = {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
     datasets: [{
@@ -80,4 +79,4 @@ export const activityData = {
         data: [2, 29, 5, 5, 2, 3, 10],
         backgroundColor: "rgba(255,153,0,0.4)"
     }]
-};
+}; */
