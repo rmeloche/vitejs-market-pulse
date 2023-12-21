@@ -1,4 +1,3 @@
-import { GoogleCharts } from "google-charts/dist/googleCharts";
 
 google.charts.load('current', {
     'packages': ['corechart', 'bar']
