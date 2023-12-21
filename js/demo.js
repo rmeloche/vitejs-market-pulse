@@ -1,4 +1,5 @@
-var chartdata;
+import Chart from 'chart.js/auto'
+
 
 google.charts.load('current', {
     'packages': ['corechart', 'bar']
@@ -11,28 +12,27 @@ function initChart() {
     //query.setQuery('select *');
     query.setQuery('select A, B, C');
     query.send(function (response) {
-        activityData = handleQueryResponse(response);
+        handleQueryResponse(response);
     });
 }
 
 function handleQueryResponse(response) {
-    // grab the data
     var data = response.getDataTable();
     var columns = data.getNumberOfColumns();
     var rows = data.getNumberOfRows();
+    console.log(data.toJSON());
 
-    // put data in json format
+    const colors = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 206, 86)', 'rgb(153, 102, 255)'];
     var dataj = JSON.parse(data.toJSON());
-
-    // get the labels from the json data 
-    var labels = [];
+    console.log(dataj.cols[0].label);
+    const labels = [];
     for (var c = 1; c < dataj.cols.length; c++) {
         if (dataj.cols[c].label != "") {
             labels.push(dataj.cols[c].label);
         }
 
     }
-
+    console.log(labels);
     const datasets = [];
     for (var i = 0; i < dataj.rows.length; i++) {
         const series_data = [];
@@ -46,8 +46,6 @@ function handleQueryResponse(response) {
             }
 
         }
-
-        const colors = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 206, 86)', 'rgb(153, 102, 255)'];
         var dataset = {
             label: dataj.rows[i].c[0].v,
             backgroundColor: colors[0],
@@ -55,39 +53,29 @@ function handleQueryResponse(response) {
             data: series_data
         }
 
-        console.log("dataset: " + dataset);
-
         datasets.push(dataset);
 
     }
+    console.log(datasets);
 
-    console.log("labels: " + labels);
-    console.log("datasets" + datasets);
-
-    chartdata = {
+    const chartdata = {
         labels: labels,
         datasets: datasets
     };
-    window.console.log("chartdata: " + chartdata);
-    //return chartdata;
+    var canvas = document.getElementById("myChart");
+    var setup = {
+        type: 'bar',
+        data: chartdata,
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: dataj.cols[0].label
+                }
+            },
+            responsive: true,
+        }
+    }
+    var chart = new Chart(canvas, setup);
+
 }
-
-window.console.log("chartdata: " + chartdata);
-export var activityData;
-
-
-
-
-/*
-export const activityData = {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [{
-        label: 'apples',
-        data: [12, 19, 3, 17, 6, 3, 7],
-        backgroundColor: "rgba(153,255,51,0.4)"
-    }, {
-        label: 'oranges',
-        data: [2, 29, 5, 5, 2, 3, 10],
-        backgroundColor: "rgba(255,153,0,0.4)"
-    }]
-}; */
