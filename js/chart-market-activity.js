@@ -1,4 +1,4 @@
-import { Chart } from "chart.js";
+import { Chart } from "chart.js/auto";
 import { activityData } from "./data-market-activity";
 import { activityOptions } from "./options-market-activity";
 

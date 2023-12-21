@@ -104,9 +104,16 @@ button:focus-visible {
 
 .btn-small {
   /* font-family: Montserrat; */
+  padding: 0.4em 1.0em;
+  border-radius: 8px;
   font-size: 12px;
   color: white;
   background-color: #820263;
+}
+
+.chart {
+  width: 800px;
+  padding: 50px
 }
 
 

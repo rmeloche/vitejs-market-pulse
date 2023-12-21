@@ -6,62 +6,60 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Market Pulse 2.0</title>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
   <!-- This is a dummy script tag so that FF will show the page after the CSS is loaded -->
   <script>0</script>
-  <div id="app-title"></div>
+  <div id="app">
+    <div id="app-title"></div>
 
-  <!-- MENU -->
-  <nav>
-    <a id="mktpls-area-charts-nav" class="btn" href="#mktpls-area-charts-div">Area Charts</a>
-    &nbsp;
-    <a id="mktpls-styles-price-ranges-nav" class="btn" href="#mktpls-styles-price-ranges-div">Styles and Price
-      Ranges</a>
-    &nbsp;
-    <a id="mktpls-custom-nav" class="btn" href="#mktpls-custom-div">Custom Charts</a>
-  </nav>
+    <!-- MENU -->
+    <nav>
+      <a id="mktpls-area-charts-nav" class="btn" href="#mktpls-area-charts-div">Area Charts</a>
+      &nbsp;
+      <a id="mktpls-styles-price-ranges-nav" class="btn" href="#mktpls-styles-price-ranges-div">Styles and Price
+        Ranges</a>
+      &nbsp;
+      <a id="mktpls-custom-nav" class="btn" href="#mktpls-custom-div">Custom Charts</a>
+    </nav>
 
-  <!-- AREA CHARTS -->
-  <div id="mktpls-area-charts-div">
-    <h2>Area Charts</h2>
-    <p class="words">
-      Select an area to generate charts
-    </p>
-    <select id="area"></select>&nbsp;
-    <a id="area_map_link" class="btn-small" href="https://wecarmap.com" target="_blank">Area Map</a>
+    <!-- AREA CHARTS -->
+    <div id="mktpls-area-charts-div" class="section">
+      <h2>Area Charts</h2>
+      <p class="words">
+        Select an area to generate charts
+      </p>
+      <select id="area"></select>&nbsp;
+      <a id="area_map_link" class="btn-small" href="https://wecarmap.com" target="_blank">Area Map</a>
 
-    <!-- divs for charts -->
-    <div style="width: 800px;"><canvas id="market_activity_chart"></canvas></div>
+      <!-- CHART DIVS -->
+      <div class="chart"><canvas id="market_activity_chart"></canvas></div>
 
+    </div>
+
+    <!-- STYLES AND PRICE RANGES -->
+    <div id="mktpls-styles-price-ranges-div">
+      <h2>Popular Home Styles</h2>
+    </div>
+
+    <!-- CUSTOM CHARTS -->
+    <div id="mktpls-custom-div">
+      <h2>Custom Charts</h2>
+      <p>Required data: CSV file or google sheet link with Listing Date, List Price, Status, Status Change Date, Sale
+        Price</p>
+      <p>Useful for
+      <ul>
+        <li>Open houses - provide stats on the local neighbourhood to visitors and neighbours</li>
+        <li>Homeowner clients - market update on their local area</li>
+        <li>Prospects or clients looking to buy - provide information on targeted neighbourhoods of interest</li>
+      </ul>
+      </p>
+    </div>
   </div>
 
-  <!-- STYLES AND PRICE RANGES -->
-  <div id="mktpls-styles-price-ranges-div">
-    <h2>Popular Home Styles</h2>
-  </div>
 
-  <!-- CUSTOM CHARTS -->
-  <div id="mktpls-custom-div">
-    <h2>Custom Charts</h2>
-    <p>Required data: CSV file or google sheet link with Listing Date, List Price, Status, Status Change Date, Sale
-      Price</p>
-    <p>Useful for
-    <ul>
-      <li>Open houses - provide stats on the local neighbourhood to visitors and neighbours</li>
-      <li>Homeowner clients - market update on their local area</li>
-      <li>Prospects or clients looking to buy - provide information on targeted neighbourhoods of interest</li>
-    </ul>
-    </p>
-  </div>
-
-  <!-- div id="app"></div -->
-  <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
-  <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
-
-  <!-- <script type="module" src="dimensions.js"></script> -->
-  <script type="module" src="js/acquisitions.js"></script>
   <script type="module" src="/main.js"></script>
   <script type="module" src="js/chart-market-activity.js"></script>
 

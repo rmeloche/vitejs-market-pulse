@@ -9,7 +9,7 @@ export const activityOptions = {
         },
         title: {
             display: true,
-            text: 'Some Title',
+            text: 'Market Activity',
             fontColor: 'rgb(0, 18, 58)',
             padding: 5,
             font: {
