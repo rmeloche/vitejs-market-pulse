@@ -18,11 +18,11 @@ function handleQueryResponse(response) {
     var data = response.getDataTable();
     var columns = data.getNumberOfColumns();
     var rows = data.getNumberOfRows();
-    //window.console.log(data.toJSON());
+    window.console.log(data.toJSON());
 
     // put data in json format
     var dataj = JSON.parse(data.toJSON());
-    console.log(dataj.cols[0].label);
+    window.console.log(dataj.cols[0].label);
 
     // get the labels from the json data 
     const labels = [];
@@ -32,11 +32,13 @@ function handleQueryResponse(response) {
         }
 
     }
-    console.log(labels);
+    window.console.log("Labels: " + labels);
 
     const datasets = [];
+    window.console.log(dataj.rows.length);
     for (i = 0; i < dataj.rows.length; i++) {
         const series_data = [];
+        window.console.log("hello? " + dataj.rows[i].c.length);
         for (j = 1; j < dataj.rows[i].c.length; j++) {
             if (dataj.rows[i].c[j] != null) {
                 if (dataj.rows[i].c[j].v != null) {
@@ -47,6 +49,7 @@ function handleQueryResponse(response) {
             }
 
         }
+        window.console.log("series_data for " + i + ":" + series_data);
 
         const colors = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 206, 86)', 'rgb(153, 102, 255)'];
         var dataset = {
