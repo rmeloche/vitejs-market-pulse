@@ -1,3 +1,5 @@
+var chartdata;
+
 google.charts.load('current', {
     'packages': ['corechart', 'bar']
 });
@@ -55,13 +57,15 @@ function handleQueryResponse(response) {
         datasets.push(dataset);
 
     }
-    const chartdata = {
+    chartdata = {
         labels: labels,
         datasets: datasets
     };
-    return chartdata;
+    window.console.log("chartdata: " + chartdata);
+    //return chartdata;
 }
 
+window.console.log("chartdata: " + chartdata);
 export var activityData;
 
 
