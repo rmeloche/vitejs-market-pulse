@@ -18,7 +18,7 @@ export const activity_options = {
         },
         datalabels: {
             anchor: 'end',
-            align: 'top',
+            align: 'bottom',
             formatter: Math.round,
             font: {
                 weight: 'bold'
@@ -30,4 +30,16 @@ export const activity_options = {
         easing: "linear"
     },
     responsive: true,
+    scales: {
+        x: {
+            grid: {
+                display: false
+            }
+        },
+        y: {
+            grid: {
+                display: false
+            }
+        }
+    }
 };
