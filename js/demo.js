@@ -28,9 +28,9 @@ function handleQueryResponse(response) {
 
     const months = [];
     for (var i = 0; i < dataj.rows.length; i++) {
-        //if (dataj.cols[c].label != "") {
-        months.push(dataj.rows[i].c[0].v);
-        //}
+        if (dataj.rows[i].c[0].v != "") {
+            months.push(dataj.rows[i].c[0].v);
+        }
 
     }
     console.log(months);

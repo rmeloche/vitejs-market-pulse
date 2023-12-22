@@ -1,4 +1,4 @@
-export const activityOptions = {
+export const activity_options = {
     plugins: {
         legend: {
             position: 'bottom',
@@ -20,5 +20,6 @@ export const activityOptions = {
     animation: {
         duration: 1000,
         easing: "linear"
-    }
+    },
+    responsive: true,
 };
