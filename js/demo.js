@@ -26,20 +26,22 @@ function handleQueryResponse(response) {
     var dataj = JSON.parse(data.toJSON());
     console.log(dataj.cols[0].label);
     const labels = [];
-    for (var c = 1; c < dataj.cols.length; c++) {
-        if (dataj.cols[c].label != "") {
-            labels.push(dataj.cols[c].label);
-        }
+
+    for (var c = 0; c < dataj.rows.length; c++) {
+        //if (dataj.cols[c].label != "") {
+        labels.push(dataj.rows[c].c[0].v);
+        //}
 
     }
     console.log(labels);
+
     const datasets = [];
-    for (var i = 0; i < dataj.rows.length; i++) {
+    for (var i = 1; i < dataj.cols.length; i++) {
         const series_data = [];
-        for (var j = 1; j < dataj.rows[i].c.length; j++) {
-            if (dataj.rows[i].c[j] != null) {
-                if (dataj.rows[i].c[j].v != null) {
-                    series_data.push(dataj.rows[i].c[j].v);
+        for (var j = 1; j < dataj.rows[j].c[i].length; j++) {
+            if (dataj.rows[j].c[i] != null) {
+                if (dataj.rows[j].c[i].v != null) {
+                    series_data.push(dataj.rows[j].c[i].v);
                 } else {
                     series_data.push(0);
                 }
@@ -47,7 +49,7 @@ function handleQueryResponse(response) {
 
         }
         var dataset = {
-            label: dataj.rows[i].c[0].v,
+            label: dataj.cols[0].label,
             backgroundColor: colors[0],
             borderColor: colors[0],
             data: series_data

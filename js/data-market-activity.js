@@ -34,8 +34,10 @@ function handleQueryResponse(response) {
     }
 
     const datasets = [];
+    console.log(dataj.rows.length);
     for (var i = 0; i < dataj.rows.length; i++) {
         const series_data = [];
+        window.console.log("second loop will run " + dataj.rows[i].c.length + "times");
         for (var j = 1; j < dataj.rows[i].c.length; j++) {
             if (dataj.rows[i].c[j] != null) {
                 if (dataj.rows[i].c[j].v != null) {
@@ -49,7 +51,7 @@ function handleQueryResponse(response) {
 
         const colors = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 206, 86)', 'rgb(153, 102, 255)'];
         var dataset = {
-            label: dataj.rows[i].c[0].v,
+            label: dataj.cols[i].label,
             backgroundColor: colors[0],
             borderColor: colors[0],
             data: series_data
