@@ -1,7 +1,7 @@
 import Chart from 'chart.js/auto'
 import { colours } from './helpers.js'
 
-
+/*
 google.charts.load('current', {
     'packages': ['corechart', 'bar']
 });
@@ -86,3 +86,4 @@ function handleQueryResponse(response) {
     var chart = new Chart(canvas, setup);
 
 }
+*/

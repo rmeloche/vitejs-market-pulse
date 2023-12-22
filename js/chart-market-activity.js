@@ -1,5 +1,5 @@
 import { activity_options } from "./options-market-activity";
-import { colours } from './helpers.js'
+import { colours, months_to_show } from './helpers.js'
 
 
 google.charts.load('current', {
@@ -21,32 +21,43 @@ function handleQueryResponse(response) {
     var data = response.getDataTable();
     var columns = data.getNumberOfColumns();
     var rows = data.getNumberOfRows();
+    console.log("number of rows" + rows);
     console.log(data.toJSON());
 
-    var dataj = JSON.parse(data.toJSON());
+
+    const dataj = JSON.parse(data.toJSON());
+    // the area we're charting:
     console.log(dataj.cols[0].label);
 
-    const months = [];
-    for (var i = 0; i < dataj.rows.length; i++) {
-        if (dataj.rows[i].c[0].v != "") {
-            months.push(dataj.rows[i].c[0].v);
+    // we only want to use the number of months configured in helper
+    const startIndex = Math.max(rows - months_to_show, 0); // Calculate the starting index
+    const lastNRows = dataj.rows.slice(startIndex); // Extract the last 'numberOfRows' rows
+    console.log(lastNRows);
+
+
+
+    var months = [];
+    for (var i = 0; i < lastNRows.length; i++) {
+        if (lastNRows[i].c[0].v != "") {
+            months.push(lastNRows[i].c[0].v);
         }
 
     }
-    console.log(months);
+    console.log("****Months******" + months);
+
 
     // get the two column heading for market activity series
     const series_labels = [dataj.cols[1].label, dataj.cols[2].label];
     console.log(series_labels);
 
-    // build the datasets
+    // build the datasets from lastNRows
     const datasets = [];
     for (var i = 1; i < dataj.cols.length; i++) {
         const series_data = [];
-        for (var j = 0; j < dataj.rows.length; j++) {
-            if (dataj.rows[j].c[i] != null) {
-                if (dataj.rows[j].c[i].v != null) {
-                    series_data.push(dataj.rows[j].c[i].v);
+        for (var j = 0; j < lastNRows.length; j++) {
+            if (lastNRows[j].c[i] != null) {
+                if (lastNRows[j].c[i].v != null) {
+                    series_data.push(lastNRows[j].c[i].v);
                 } else {
                     series_data.push(0);
                 }
