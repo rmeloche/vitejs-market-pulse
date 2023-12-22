@@ -1,7 +1,7 @@
 export const activity_options = {
     plugins: {
         legend: {
-            position: 'bottom',
+            position: 'top',
             color: '#000000',
             labels: {
                 usePointStyle: true,
