@@ -1,8 +1,7 @@
 import './style.css'
 import * as Helpers from './js/helpers.js';
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+
+Chart.register(ChartDataLabels);
 
 const appDiv = document.getElementById('app-title');
 appDiv.innerHTML = '<h1>Windsor-Essex County Market Pulse</h1>';

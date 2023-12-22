@@ -1,4 +1,3 @@
-import Chart from 'chart.js/auto'
 import { activity_options } from "./options-market-activity";
 import { colours } from './helpers.js'
 

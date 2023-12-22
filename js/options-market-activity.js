@@ -15,6 +15,14 @@ export const activity_options = {
             font: {
                 size: '18'
             }
+        },
+        datalabels: {
+            anchor: 'end',
+            align: 'top',
+            formatter: Math.round,
+            font: {
+                weight: 'bold'
+            }
         }
     },
     animation: {
