@@ -1,4 +1,5 @@
 import Chart from 'chart.js/auto'
+import { colours } from './helpers.js'
 
 
 google.charts.load('current', {
@@ -22,23 +23,27 @@ function handleQueryResponse(response) {
     var rows = data.getNumberOfRows();
     console.log(data.toJSON());
 
-    const colors = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 206, 86)', 'rgb(153, 102, 255)'];
     var dataj = JSON.parse(data.toJSON());
     console.log(dataj.cols[0].label);
-    const labels = [];
 
-    for (var c = 0; c < dataj.rows.length; c++) {
+    const months = [];
+    for (var i = 0; i < dataj.rows.length; i++) {
         //if (dataj.cols[c].label != "") {
-        labels.push(dataj.rows[c].c[0].v);
+        months.push(dataj.rows[i].c[0].v);
         //}
 
     }
-    console.log(labels);
+    console.log(months);
 
+    // get the two column heading for graphing market activity
+    const series_labels = [dataj.cols[1].label, dataj.cols[2].label];
+    console.log(series_labels);
+
+    // build the datasets
     const datasets = [];
     for (var i = 1; i < dataj.cols.length; i++) {
         const series_data = [];
-        for (var j = 1; j < dataj.rows[j].c[i].length; j++) {
+        for (var j = 0; j < dataj.rows.length; j++) {
             if (dataj.rows[j].c[i] != null) {
                 if (dataj.rows[j].c[i].v != null) {
                     series_data.push(dataj.rows[j].c[i].v);
@@ -49,9 +54,9 @@ function handleQueryResponse(response) {
 
         }
         var dataset = {
-            label: dataj.cols[0].label,
-            backgroundColor: colors[0],
-            borderColor: colors[0],
+            label: dataj.cols[i].label,
+            backgroundColor: colours[i - 1],
+            borderColor: colours[i - 1],
             data: series_data
         }
 
@@ -61,7 +66,7 @@ function handleQueryResponse(response) {
     console.log(datasets);
 
     const chartdata = {
-        labels: labels,
+        labels: months,
         datasets: datasets
     };
     var canvas = document.getElementById("myChart");

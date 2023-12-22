@@ -1,4 +1,6 @@
-var chartdata;
+import { colours } from './helpers.js'
+
+export var chartdata;
 
 google.charts.load('current', {
     'packages': ['corechart', 'bar']
@@ -11,71 +13,66 @@ function initChart() {
     //query.setQuery('select *');
     query.setQuery('select A, B, C');
     query.send(function (response) {
-        activityData = handleQueryResponse(response);
+        handleQueryResponse(response);
     });
 }
 
 function handleQueryResponse(response) {
-    // grab the data
     var data = response.getDataTable();
     var columns = data.getNumberOfColumns();
     var rows = data.getNumberOfRows();
+    console.log(data.toJSON());
 
-    // put data in json format
     var dataj = JSON.parse(data.toJSON());
+    console.log(dataj.cols[0].label);
 
-    // get the labels from the json data 
-    var labels = [];
-    for (var c = 1; c < dataj.cols.length; c++) {
-        if (dataj.cols[c].label != "") {
-            labels.push(dataj.cols[c].label);
-        }
+    const months = [];
+    for (var i = 0; i < dataj.rows.length; i++) {
+        //if (dataj.cols[c].label != "") {
+        months.push(dataj.rows[i].c[0].v);
+        //}
 
     }
+    console.log(months);
 
+    // get the two column heading for graphing market activity
+    const series_labels = [dataj.cols[1].label, dataj.cols[2].label];
+    console.log(series_labels);
+
+    // build the datasets
     const datasets = [];
-    console.log(dataj.rows.length);
-    for (var i = 0; i < dataj.rows.length; i++) {
+    for (var i = 1; i < dataj.cols.length; i++) {
         const series_data = [];
-        window.console.log("second loop will run " + dataj.rows[i].c.length + "times");
-        for (var j = 1; j < dataj.rows[i].c.length; j++) {
-            if (dataj.rows[i].c[j] != null) {
-                if (dataj.rows[i].c[j].v != null) {
-                    series_data.push(dataj.rows[i].c[j].v);
+        for (var j = 0; j < dataj.rows.length; j++) {
+            if (dataj.rows[j].c[i] != null) {
+                if (dataj.rows[j].c[i].v != null) {
+                    series_data.push(dataj.rows[j].c[i].v);
                 } else {
                     series_data.push(0);
                 }
             }
 
         }
-
-        const colors = ['rgb(54, 162, 235)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 206, 86)', 'rgb(153, 102, 255)'];
         var dataset = {
             label: dataj.cols[i].label,
-            backgroundColor: colors[0],
-            borderColor: colors[0],
+            backgroundColor: colours[i - 1],
+            borderColor: colours[i - 1],
             data: series_data
         }
-
-        console.log("dataset: " + dataset);
 
         datasets.push(dataset);
 
     }
-
-    console.log("labels: " + labels);
-    console.log("datasets" + datasets);
+    console.log(datasets);
 
     chartdata = {
-        labels: labels,
+        labels: months,
         datasets: datasets
     };
-    window.console.log("chartdata: " + chartdata);
-    //return chartdata;
 }
 
 window.console.log("chartdata: " + chartdata);
-export var activityData;
+//export var activityData;
 
 
 
