@@ -35,8 +35,7 @@ export function DrawMarketActivityChart(code) {
         const lastNRows = dataj.rows.slice(startIndex); // Extract the last 'numberOfRows' rows
         console.log(lastNRows);
 
-
-
+        // get the labels for the months
         var months = [];
         for (var i = 0; i < lastNRows.length; i++) {
             if (lastNRows[i].c[0].v != "") {
@@ -44,12 +43,6 @@ export function DrawMarketActivityChart(code) {
             }
 
         }
-        console.log("****Months******" + months);
-
-
-        // get the two column heading for market activity series
-        const series_labels = [dataj.cols[1].label, dataj.cols[2].label];
-        console.log(series_labels);
 
         // build the datasets from lastNRows
         const datasets = [];

@@ -44,12 +44,6 @@ export function DrawAvgMedPriceChart(code) {
             }
 
         }
-        console.log("****Months******" + months);
-
-
-        // get the two column heading for market activity series
-        const series_labels = [dataj.cols[1].label, dataj.cols[2].label];
-        console.log(series_labels);
 
         // build the datasets from lastNRows
         const datasets = [];

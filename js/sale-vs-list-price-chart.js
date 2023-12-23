@@ -46,12 +46,6 @@ export function DrawSaleVSListPriceChart(code) {
             }
 
         }
-        console.log("****Months******" + months);
-
-
-        // get the two column heading for market activity series
-        const series_labels = [dataj.cols[1].label, dataj.cols[2].label];
-        console.log(series_labels);
 
         // build the datasets from lastNRows
         highest_value = 1;
@@ -73,7 +67,6 @@ export function DrawSaleVSListPriceChart(code) {
                         // keep track of highest and lowest values for the chart scale options
                         highest_value = Math.max(highest_value, series_data[j]);
                         if (series_data[j] > 0) {
-                            console.log("^^^^^MIN: " + series_data[j]);
                             lowest_value = Math.min(lowest_value, series_data[j]);
                         }
 
@@ -120,6 +113,9 @@ export function DrawSaleVSListPriceChart(code) {
             if (code == "SITE") break;
 
         }
+
+        // set the series label for average list price 
+        datasets[1].label = "Average List Price";
         console.log(datasets);
 
         const chartdata = {
