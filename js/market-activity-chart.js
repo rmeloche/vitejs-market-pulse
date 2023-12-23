@@ -1,7 +1,7 @@
 import { activity_options } from "./market-activity-options.js";
 import { colours, months_to_show } from './helpers.js'
 
-export function DrawMarketActivityChart(area) {
+export function DrawMarketActivityChart(code) {
 
     google.charts.load('current', {
         'packages': ['corechart', 'bar']
@@ -9,7 +9,7 @@ export function DrawMarketActivityChart(area) {
     google.charts.setOnLoadCallback(initChart);
 
     function initChart() {
-        URL = "https://docs.google.com/spreadsheets/d/1wQFTtqdiWov2-IcdjV42V0VfQ66nG1usM23P_F8HtA4/gviz/tq?sheet=SITE&headers=2";
+        URL = "https://docs.google.com/spreadsheets/d/1wQFTtqdiWov2-IcdjV42V0VfQ66nG1usM23P_F8HtA4/gviz/tq?sheet=" + code + "&headers=2";
         var query = new google.visualization.Query(URL);
         //query.setQuery('select *');
         query.setQuery('select A, B, C');
