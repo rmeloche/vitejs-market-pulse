@@ -81,13 +81,18 @@ export function DrawMarketActivityChart(code) {
             labels: months,
             datasets: datasets
         };
+
         var canvas = document.getElementById("market_activity_chart");
+        var chart = Chart.getChart(canvas); // Get the chart object associated with the canvas
+        if (chart) {
+            chart.destroy(); // Destroy the chart if it exists
+        }
         var setup = {
             type: 'bar',
             data: chartdata,
             options: activity_options,
         }
-        var chart = new Chart(canvas, setup);
+        chart = new Chart(canvas, setup);
 
     }
 }
