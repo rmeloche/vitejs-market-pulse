@@ -84,7 +84,7 @@ for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
 //**********************************************
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('area_title').innerHTML = '<h2>All Residential</h2>';
+  document.getElementById('area_title').innerHTML = '<h2>Windsor-Essex All Residential</h2>';
   DrawMarketActivityChart("ALL");
   DrawAvgMedPriceChart("ALL");
   DrawSaleVSListPriceChart("ALL");
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedOption = this.options[this.selectedIndex];
     let sheetCode = selectedOption.value;
     area = selectedOption.textContent;
-    document.getElementById('area_title').innerHTML = '<h2>' + area + '</h2>';
+    setAreaTitle(area);
     redrawCharts(sheetCode);
   });
 });
@@ -106,6 +106,20 @@ function redrawCharts(sheetCode) {
   DrawMarketActivityChart(sheetCode);
   DrawAvgMedPriceChart(sheetCode);
   DrawSaleVSListPriceChart(sheetCode);
+}
+
+function setAreaTitle(area) {
+  var title;
+  if (!isNaN(parseInt(area[0], 10))) {
+    title = area.slice(5);
+  } else {
+    if (area == 'WECAR Stats') {
+      title = 'WECAR Site Stats';
+    } else {
+      title = 'Windsor-Essex ' + area;
+    }
+  }
+  document.getElementById('area_title').innerHTML = '<h2>' + title + '</h2>';
 }
 
 
