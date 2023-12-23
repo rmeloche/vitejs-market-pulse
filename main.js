@@ -1,6 +1,7 @@
 import './style.css'
 import * as Helpers from './js/helpers.js';
 import { DrawMarketActivityChart } from './js/market-activity-chart.js';
+import { DrawAvgMedPriceChart } from './js/avg-med-price-chart.js';
 
 Chart.register(ChartDataLabels);
 
@@ -28,7 +29,6 @@ var pages = pageNames.map(function (pageName) {
 
 pages.forEach(function (page) {
   page.nav.addEventListener('click', function () {
-    window.console.log("menu link was clicked!");
     clearPages(pages);
     page.div.style.display = "block";
   })
@@ -86,6 +86,7 @@ for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
 
 document.addEventListener('DOMContentLoaded', function () {
   DrawMarketActivityChart("SITE");
+  DrawAvgMedPriceChart("SITE");
 });
 
 
