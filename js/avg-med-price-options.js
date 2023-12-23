@@ -1,3 +1,10 @@
+const formatter = new Intl.NumberFormat("en-CA", {
+    style: "currency",
+    currency: "CAD",
+    currencyDisplay: "symbol",
+}); // Change locale according to your currency and country
+
+
 export const avg_med_price_options = {
     plugins: {
         legend: {
@@ -18,8 +25,10 @@ export const avg_med_price_options = {
         },
         datalabels: {
             anchor: 'end',
-            align: 'bottom',
-            //formatter: Math.round,
+            align: 'top',
+            formatter: function (value, context) {
+                return "$" + value.toLocaleString();
+            },
             color: 'white',
             font: {
                 //weight: 'bold',
@@ -39,6 +48,15 @@ export const avg_med_price_options = {
             }
         },
         y: {
+            ticks: {
+                callback: function (value, index, values) {
+                    //pass tick values as a string into Number function
+                    return Number((value / 1000).toString()) + 'K';
+                }
+            },
+            min: 300000,
+            max: 650000,
+            startAtZero: false,
             grid: {
                 display: false
             }
