@@ -64,6 +64,7 @@ export const sale_list_price_options = {
                     //pass tick values as a string into Number function
                     return Number((value / 1000).toString()) + 'K';
                 },
+                padding: 20,
             },
             min: 300000,
             max: highest_value,
