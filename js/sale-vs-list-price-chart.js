@@ -55,7 +55,7 @@ export function DrawSaleVSListPriceChart(code) {
 
         // build the datasets from lastNRows
         highest_value = 1;
-        lowest_value = 1;
+        lowest_value = 900000;
         const datasets = [];
         for (var i = 1; i < dataj.cols.length; i++) {
             const series_data = [];
@@ -71,9 +71,10 @@ export function DrawSaleVSListPriceChart(code) {
                         }
 
                         // keep track of highest and lowest values for the chart scale options
-                        highest_value = Math.max(highest_value, lastNRows[j].c[i].v);
-                        if (lastNRows[j].c[i].v > 0) {
-                            lowest_value = Math.min(lowest_value, lastNRows[j].c[i].v);
+                        highest_value = Math.max(highest_value, series_data[j]);
+                        if (series_data[j] > 0) {
+                            console.log("^^^^^MIN: " + series_data[j]);
+                            lowest_value = Math.min(lowest_value, series_data[j]);
                         }
 
                     } else {
