@@ -1,3 +1,5 @@
+import { highest_value } from "./sale-vs-list-price-chart";
+
 Chart.register(ChartDataLabels);
 
 const formatter = new Intl.NumberFormat("en-CA", {
@@ -5,7 +7,6 @@ const formatter = new Intl.NumberFormat("en-CA", {
     currency: "CAD",
     currencyDisplay: "symbol",
 }); // Change locale according to your currency and country
-
 
 export const sale_list_price_options = {
     plugins: {
@@ -18,7 +19,7 @@ export const sale_list_price_options = {
         },
         title: {
             display: true,
-            text: 'Prices',
+            text: 'Sale and List Prices',
             fontColor: 'rgb(0, 18, 58)',
             padding: 5,
             font: {
@@ -57,7 +58,8 @@ export const sale_list_price_options = {
                 }
             },
             min: 300000,
-            max: 650000,
+            max: highest_value,
+            //suggestedMax: 650000,
             startAtZero: false,
             grid: {
                 display: false
