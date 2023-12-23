@@ -1,7 +1,7 @@
-import { activity_options } from "./market-activity-options.js";
+import { sale_list_price_options } from "./sale-vs-list-price-options.js";
 import { colours, months_to_show } from './helpers.js'
 
-export function DrawMarketActivityChart(code) {
+export function DrawSaleVSListPriceChart(code) {
 
     google.charts.load('current', {
         'packages': ['corechart', 'bar']
@@ -12,7 +12,7 @@ export function DrawMarketActivityChart(code) {
         URL = "https://docs.google.com/spreadsheets/d/1wQFTtqdiWov2-IcdjV42V0VfQ66nG1usM23P_F8HtA4/gviz/tq?sheet=" + code + "&headers=2";
         var query = new google.visualization.Query(URL);
         //query.setQuery('select *');
-        query.setQuery('select A, B, C');
+        query.setQuery('select A, G, I');
         query.send(function (response) {
             handleQueryResponse(response);
         });
@@ -82,19 +82,19 @@ export function DrawMarketActivityChart(code) {
             datasets: datasets
         };
 
-        var canvas = document.getElementById("market_activity_chart");
+        var canvas = document.getElementById("sale_vs_list_price_chart");
         var chart = Chart.getChart(canvas); // Get the chart object associated with the canvas
         if (chart) {
             chart.destroy(); // Destroy the chart if it exists
         }
+
         var setup = {
-            type: 'bar',
+            type: 'line',
             data: chartdata,
-            options: activity_options,
+            options: sale_list_price_options,
         }
         chart = new Chart(canvas, setup);
 
     }
 }
-
 

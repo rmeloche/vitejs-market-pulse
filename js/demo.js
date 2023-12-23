@@ -87,3 +87,13 @@ function handleQueryResponse(response) {
 
 }
 */
+
+/*
+console.log("In the chart file: " + activity_data);
+
+var ctx = document.getElementById('market_activity_chart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: activity_data,
+    options: activity_options
+});  */
