@@ -1,3 +1,5 @@
+Chart.register(ChartDataLabels);
+
 export const activity_options = {
     plugins: {
         legend: {

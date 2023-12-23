@@ -3,8 +3,6 @@ import * as Helpers from './js/helpers.js';
 import { DrawMarketActivityChart } from './js/market-activity-chart.js';
 import { DrawAvgMedPriceChart } from './js/avg-med-price-chart.js';
 
-Chart.register(ChartDataLabels);
-
 const appDiv = document.getElementById('app-title');
 appDiv.innerHTML = '<h1>Windsor-Essex County Market Pulse</h1>';
 
