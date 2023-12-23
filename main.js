@@ -79,11 +79,12 @@ for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
   }
 }
 
-// ****************************************
-// AREA CHARTS - Draw Charts
-//*****************************************
+// *********************************************
+// AREA CHARTS - Draw Charts for Selected Area
+//**********************************************
 
 document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('area_title').innerHTML = '<h2>All Residential</h2>';
   DrawMarketActivityChart("ALL");
   DrawAvgMedPriceChart("ALL");
   DrawSaleVSListPriceChart("ALL");
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedOption = this.options[this.selectedIndex];
     let sheetCode = selectedOption.value;
     area = selectedOption.textContent;
+    document.getElementById('area_title').innerHTML = '<h2>' + area + '</h2>';
     redrawCharts(sheetCode);
   });
 });
