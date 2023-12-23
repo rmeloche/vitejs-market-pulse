@@ -1,5 +1,6 @@
 import './style.css'
 import * as Helpers from './js/helpers.js';
+import { DrawMarketActivityChart } from './js/market-activity-chart.js';
 
 Chart.register(ChartDataLabels);
 
@@ -79,6 +80,13 @@ for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
   }
 }
 
+// ****************************************
+// AREA CHARTS - Draw Charts
+//*****************************************
+
+document.addEventListener('DOMContentLoaded', function () {
+  DrawMarketActivityChart("SITE");
+});
 
 
 /*
