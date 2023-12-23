@@ -89,6 +89,22 @@ document.addEventListener('DOMContentLoaded', function () {
   DrawAvgMedPriceChart("SITE");
 });
 
+// Area Charts - Get option and refresh charts
+document.addEventListener('DOMContentLoaded', () => {
+  const areaSelect = document.getElementById('area');
+  areaSelect.addEventListener('change', function () {
+    const selectedOption = this.options[this.selectedIndex];
+    let sheetCode = selectedOption.value;
+    area = selectedOption.textContent;
+    redrawCharts(sheetCode);
+  });
+});
+
+function redrawCharts(sheetCode) {
+  DrawMarketActivityChart(sheetCode);
+  DrawAvgMedPriceChart(sheetCode);
+}
+
 
 /*
 document.querySelector('#app').innerHTML = `
