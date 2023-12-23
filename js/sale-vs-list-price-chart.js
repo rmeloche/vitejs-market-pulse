@@ -116,6 +116,9 @@ export function DrawSaleVSListPriceChart(code) {
 
             datasets.push(dataset);
 
+            // we don't have sales/list ratio for site data, get out of loop
+            if (code == "SITE") break;
+
         }
         console.log(datasets);
 
