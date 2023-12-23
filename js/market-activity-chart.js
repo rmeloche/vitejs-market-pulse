@@ -62,6 +62,8 @@ export function DrawMarketActivityChart(code) {
                     } else {
                         series_data.push(0);
                     }
+                } else {
+                    series_data.push(0);
                 }
 
             }

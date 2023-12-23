@@ -58,10 +58,19 @@ export function DrawSaleVSListPriceChart(code) {
             for (var j = 0; j < lastNRows.length; j++) {
                 if (lastNRows[j].c[i] != null) {
                     if (lastNRows[j].c[i].v != null) {
-                        series_data.push(lastNRows[j].c[i].v);
+                        // for the second column, we calculate the avg list price
+                        if (i == 1) {
+                            series_data.push(lastNRows[j].c[i].v);
+                        } else {
+                            let list_price = Math.round((lastNRows[j].c[1].v * (1 / (lastNRows[j].c[i].v / 100))));
+                            series_data.push(list_price);
+                        }
+
                     } else {
                         series_data.push(0);
                     }
+                } else {
+                    series_data.push(0);
                 }
 
             }
