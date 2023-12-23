@@ -43,7 +43,8 @@ export const snlr_options = {
         y: {
             grid: {
                 display: false
-            }
+            },
+            max: 100,
         }
     }
 };
