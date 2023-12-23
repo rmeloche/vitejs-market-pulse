@@ -84,9 +84,9 @@ for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
 //*****************************************
 
 document.addEventListener('DOMContentLoaded', function () {
-  DrawMarketActivityChart("SITE");
-  DrawAvgMedPriceChart("SITE");
-  DrawSaleVSListPriceChart("SITE");
+  DrawMarketActivityChart("ALL");
+  DrawAvgMedPriceChart("ALL");
+  DrawSaleVSListPriceChart("ALL");
 });
 
 // Area Charts - Get option and refresh charts

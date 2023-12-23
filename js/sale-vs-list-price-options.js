@@ -9,12 +9,20 @@ const formatter = new Intl.NumberFormat("en-CA", {
 }); // Change locale according to your currency and country
 
 export const sale_list_price_options = {
+    layout: {
+        padding: {
+            //left: 50,
+            right: 50,
+            //top: 50,
+            //bottom: 50
+        }
+    },
     plugins: {
         legend: {
             position: 'top',
             color: '#000000',
             labels: {
-                usePointStyle: true,
+                usePointStyle: false,
             }
         },
         title: {
@@ -48,14 +56,14 @@ export const sale_list_price_options = {
         x: {
             grid: {
                 display: false
-            }
+            },
         },
         y: {
             ticks: {
                 callback: function (value, index, values) {
                     //pass tick values as a string into Number function
                     return Number((value / 1000).toString()) + 'K';
-                }
+                },
             },
             min: 300000,
             max: highest_value,
