@@ -84,7 +84,7 @@ for (var i = 0; i < Helpers.wecOptGroups.length; i++) {
 //**********************************************
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('area_title').innerHTML = '<h2>Windsor-Essex All Residential</h2>';
+  document.getElementById('area_title').innerHTML = '<h3>Windsor-Essex All Residential</h3>';
   DrawMarketActivityChart("ALL");
   DrawAvgMedPriceChart("ALL");
   DrawSaleVSListPriceChart("ALL");
@@ -119,7 +119,7 @@ function setAreaTitle(area) {
       title = 'Windsor-Essex ' + area;
     }
   }
-  document.getElementById('area_title').innerHTML = '<h2>' + title + '</h2>';
+  document.getElementById('area_title').innerHTML = '<h3>' + title + '</h3>';
 }
 
 
