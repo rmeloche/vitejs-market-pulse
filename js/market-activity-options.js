@@ -19,9 +19,11 @@ export const activity_options = {
         datalabels: {
             anchor: 'end',
             align: 'bottom',
-            formatter: Math.round,
+            //formatter: Math.round,
+            color: 'white',
             font: {
-                weight: 'bold'
+                //weight: 'bold',
+                size: 14,
             }
         }
     },
