@@ -1,5 +1,6 @@
 import { snlr_options } from "./snlr-options.js";
 import { colours, months_to_show } from './helpers.js'
+Chart.register(ChartDataLabels);
 
 export function drawSNLRChart(code) {
 
@@ -48,28 +49,68 @@ export function drawSNLRChart(code) {
         const datasets = [];
         for (var i = 1; i < dataj.cols.length; i++) {
             const series_data = [];
+            const buyers_data = [];
+            const balanced_data = [];
+            const sellers_data = [];
             for (var j = 0; j < lastNRows.length; j++) {
                 if (lastNRows[j].c[i] != null) {
                     if (lastNRows[j].c[i].v != null) {
                         series_data.push(lastNRows[j].c[i].v);
+                        buyers_data.push(40);
+                        balanced_data.push(60);
+                        sellers_data.push(100);
                     } else {
                         series_data.push(0);
+                        buyers_data.push(40);
+                        balanced_data.push(60);
+                        sellers_data.push(100);
                     }
                 } else {
                     series_data.push(0);
+                    buyers_data.push(40);
+                    balanced_data.push(60);
+                    sellers_data.push(100);
                 }
 
             }
+
+            // only put datalabels on first series
             var dataset = {
                 label: dataj.cols[i].label,
                 backgroundColor: colours[i - 1],
                 borderColor: colours[i - 1],
-                data: series_data
-            }
+                data: series_data,
+                datalabels: {
+                    anchor: 'end',
+                    align: 'bottom',
+                    color: 'white',
+                    font: {
+                        size: 14,
+                    }
+                }
+            };
 
             datasets.push(dataset);
 
+            var buyerset = {
+                label: "Buyer's Market",
+                backgroundColor: colours[6],
+                borderColor: colours[6],
+                type: 'line',
+                fill: '1',
+                data: buyers_data,
+                datalabels: {
+                    labels: {
+                        title: null
+                    }
+                }
+            };
+
+            datasets.push(buyerset);
+
         }
+
+        console.log("*****SNLR DATASET*****");
         console.log(datasets);
 
         const chartdata = {

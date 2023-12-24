@@ -18,16 +18,7 @@ export const snlr_options = {
                 size: '18'
             }
         },
-        datalabels: {
-            anchor: 'end',
-            align: 'bottom',
-            //formatter: Math.round,
-            color: 'white',
-            font: {
-                //weight: 'bold',
-                size: 14,
-            }
-        }
+
     },
     animation: {
         duration: 1000,
