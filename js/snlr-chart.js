@@ -97,7 +97,7 @@ export function drawSNLRChart(code) {
                 backgroundColor: colours[6],
                 borderColor: colours[6],
                 type: 'line',
-                fill: '1',
+                fill: 'stack',
                 data: buyers_data,
                 datalabels: {
                     labels: {
@@ -107,6 +107,38 @@ export function drawSNLRChart(code) {
             };
 
             datasets.push(buyerset);
+
+            var balanceset = {
+                label: "Balanced Market",
+                backgroundColor: colours[7],
+                borderColor: colours[7],
+                type: 'line',
+                fill: 'stack',
+                data: balanced_data,
+                datalabels: {
+                    labels: {
+                        title: null
+                    }
+                }
+            };
+
+            datasets.push(balanceset);
+
+            var sellerset = {
+                label: "Seller's Market",
+                backgroundColor: colours[8],
+                borderColor: colours[8],
+                type: 'line',
+                fill: 'stack',
+                data: sellers_data,
+                datalabels: {
+                    labels: {
+                        title: null
+                    }
+                }
+            };
+
+            datasets.push(sellerset);
 
         }
 
