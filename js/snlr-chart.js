@@ -107,7 +107,7 @@ export function drawSNLRChart(code) {
                 }
             };
 
-            datasets.push(buyerset);
+            //datasets.push(buyerset);
 
             var balanceset = {
                 label: "Balanced Market",
@@ -123,7 +123,7 @@ export function drawSNLRChart(code) {
                 }
             };
 
-            datasets.push(balanceset);
+            //datasets.push(balanceset);
 
             var sellerset = {
                 label: "Seller's Market",
@@ -139,7 +139,7 @@ export function drawSNLRChart(code) {
                 }
             };
 
-            datasets.push(sellerset);
+            //datasets.push(sellerset);
 
         }
 
@@ -157,7 +157,7 @@ export function drawSNLRChart(code) {
             chart.destroy(); // Destroy the chart if it exists
         }
         var setup = {
-            type: 'bar',
+            type: 'line',
             data: chartdata,
             options: snlr_options,
         }
