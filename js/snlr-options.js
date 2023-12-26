@@ -48,6 +48,39 @@ export const snlr_options = {
                     yMin: 60,
                     yMax: 100,
                     backgroundColor: 'rgba(255, 99, 32, 0.25)'
+                },
+                label1: {
+                    type: 'label',
+                    xValue: 1,
+                    yValue: 80,
+                    //backgroundColor: 'rgba(245,245,245)',
+                    content: ["Seller's Market"],
+                    color: 'grey',
+                    font: {
+                        size: 12,
+                    }
+                },
+                label2: {
+                    type: 'label',
+                    xValue: 1,
+                    yValue: 20,
+                    //backgroundColor: 'rgba(245,245,245)',
+                    content: ["Buyer's Market"],
+                    color: 'grey',
+                    font: {
+                        size: 12,
+                    }
+                },
+                label3: {
+                    type: 'label',
+                    xValue: 1,
+                    yValue: 50,
+                    //backgroundColor: 'rgba(245,245,245)',
+                    content: ["Balanced Market"],
+                    color: 'grey',
+                    font: {
+                        size: 12,
+                    }
                 }
             }
         }
