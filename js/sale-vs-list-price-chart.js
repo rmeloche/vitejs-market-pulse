@@ -1,3 +1,4 @@
+import Chart from 'chart.js/auto';
 import { sale_list_price_options } from "./sale-vs-list-price-options.js";
 import { colours, months_to_show } from './helpers.js'
 

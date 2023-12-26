@@ -1,4 +1,4 @@
-Chart.register(ChartDataLabels);
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const formatter = new Intl.NumberFormat("en-CA", {
     style: "currency",

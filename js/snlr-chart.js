@@ -1,6 +1,7 @@
+import Chart from 'chart.js/auto';
 import { snlr_options } from "./snlr-options.js";
 import { colours, months_to_show } from './helpers.js'
-Chart.register(ChartDataLabels);
+
 
 export function drawSNLRChart(code) {
 

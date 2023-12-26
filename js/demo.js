@@ -1,16 +1,12 @@
+// Import Chart, Datalabels, Annotations and register them
+import Chart from 'chart.js/auto';
+import annotationPlugin from 'chartjs-plugin-annotation';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+Chart.register(annotationPlugin);
+Chart.register(ChartDataLabels);
 
-var annotations = {
-    box1: {
-        drawTime: 'afterDatasetsDraw',
-        type: 'box',
-        xMin: 1,
-        xMax: 3,
-        yMin: 50,
-        yMax: 70,
-        backgroundColor: 'rgb(75, 192, 192)'
-    }
-};
 
+// TEST CHART
 const config = {
     type: 'line',
     data: {
@@ -25,14 +21,25 @@ const config = {
     },
     options: {
         plugins: {
-            annotation: annotations,
-
+            annotation: {
+                annotations: {
+                    box1: {
+                        // Indicates the type of annotation
+                        type: 'box',
+                        xMin: 1,
+                        xMax: 2,
+                        yMin: 50,
+                        yMax: 70,
+                        backgroundColor: 'rgba(255, 99, 132, 0.25)'
+                    }
+                }
+            }
         }
     }
 };
 
+var ctx = document.getElementById("test");
 var chart = new Chart(ctx, config);
-
 
 
 

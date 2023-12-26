@@ -1,3 +1,4 @@
+import Chart from 'chart.js/auto';
 import { avg_med_price_options } from "./avg-med-price-options.js";
 import { colours, months_to_show } from './helpers.js'
 

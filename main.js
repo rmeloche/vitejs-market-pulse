@@ -1,13 +1,17 @@
 import './style.css'
+
+// Import Chart, Datalabels, Annotations and register them
+import Chart from 'chart.js/auto';
+import annotationPlugin from 'chartjs-plugin-annotation';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+Chart.register(annotationPlugin);
+Chart.register(ChartDataLabels);
+
 import * as Helpers from './js/helpers.js';
 import { DrawMarketActivityChart } from './js/market-activity-chart.js';
 import { DrawAvgMedPriceChart } from './js/avg-med-price-chart.js';
 import { DrawSaleVSListPriceChart } from './js/sale-vs-list-price-chart.js';
 import { drawSNLRChart } from './js/snlr-chart.js';
-
-import { Chart } from 'chart.js/auto';
-import annotationPlugin from 'chartjs-plugin-annotation';
-Chart.register(annotationPlugin);
 
 const appDiv = document.getElementById('app-title');
 appDiv.innerHTML = '<h1>Windsor-Essex County Market Pulse</h1>';

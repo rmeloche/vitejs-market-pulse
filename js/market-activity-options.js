@@ -1,4 +1,4 @@
-Chart.register(ChartDataLabels);
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 export const activity_options = {
     plugins: {

@@ -1,3 +1,4 @@
+import Chart from 'chart.js/auto';
 import { activity_options } from "./market-activity-options.js";
 import { colours, months_to_show } from './helpers.js'
 

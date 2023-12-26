@@ -1,4 +1,5 @@
-Chart.register(ChartDataLabels);
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+import annotationPlugin from 'chartjs-plugin-annotation';
 
 export const snlr_options = {
     plugins: {

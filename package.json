@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "chart.js": "^4.4.1",
-    "chartjs-plugin-annotation": "^3.0.1"
+    "chartjs-plugin-annotation": "^3.0.1",
+    "chartjs-plugin-datalabels": "^2.2.0"
   }
 }

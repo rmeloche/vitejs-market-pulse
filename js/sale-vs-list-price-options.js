@@ -1,6 +1,6 @@
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { highest_value } from "./sale-vs-list-price-chart";
 
-Chart.register(ChartDataLabels);
 
 const formatter = new Intl.NumberFormat("en-CA", {
     style: "currency",
