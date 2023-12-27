@@ -51,35 +51,38 @@ export const snlr_options = {
                 },
                 label1: {
                     type: 'label',
+                    drawTime: 'beforeDatasetsDraw',
                     xValue: 1,
                     yValue: 80,
                     //backgroundColor: 'rgba(245,245,245)',
                     content: ["Seller's Market"],
                     color: 'grey',
                     font: {
-                        size: 12,
+                        size: 16,
                     }
                 },
                 label2: {
                     type: 'label',
+                    drawTime: 'beforeDatasetsDraw',
                     xValue: 1,
                     yValue: 20,
                     //backgroundColor: 'rgba(245,245,245)',
                     content: ["Buyer's Market"],
                     color: 'grey',
                     font: {
-                        size: 12,
+                        size: 16,
                     }
                 },
                 label3: {
                     type: 'label',
+                    drawTime: 'beforeDatasetsDraw',
                     xValue: 1,
                     yValue: 50,
                     //backgroundColor: 'rgba(245,245,245)',
                     content: ["Balanced Market"],
                     color: 'grey',
                     font: {
-                        size: 12,
+                        size: 16,
                     }
                 }
             }
