@@ -133,7 +133,7 @@ function setAreaTitle(area) {
       title = 'Windsor-Essex ' + area;
     }
   }
-  document.getElementById('area_title').innerHTML = '<h3>' + title + '</h3>';
+  document.getElementById('area_title').innerHTML = `<h3>${title}</h3>`;
 }
 
 

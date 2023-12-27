@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 import { activity_options } from "./market-activity-options.js";
-import { colours, months_to_show } from './helpers.js'
+import { colours, months_to_show, calculatePercentageChange, setColorBasedOnValue } from './helpers.js';
 
 export function DrawMarketActivityChart(code) {
 
@@ -70,7 +70,18 @@ export function DrawMarketActivityChart(code) {
 
             datasets.push(dataset);
 
+            const percentageChange = calculatePercentageChange(dataset);
+            if (percentageChange !== null) {
+                // Update the HTML elements or tiles with the percentage change for each dataset
+                const tileElement = document.getElementById(`market_activity_${i}`);
+                if (tileElement) {
+                    tileElement.innerText = `${percentageChange}%`;
+                    setColorBasedOnValue(tileElement, percentageChange);
+                }
+            }
+
         }
+
         console.log(datasets);
 
         const chartdata = {

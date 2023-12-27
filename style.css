@@ -116,44 +116,59 @@ button:focus-visible {
   padding: 50px
 }
 
+#area_title {
+  font-size: 24px;
+}
+
 /* Style for the grid container */
 .grid-container {
-  display: grid;
   /* Use CSS grid */
-  grid-template-columns: 1fr 1fr;
+  display: grid;
   /* Two columns with equal width */
-  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   /* Gap between grid items */
-  justify-content: center;
+  grid-gap: 10px;
   /* Center the grid items horizontally */
-  align-items: center;
+  justify-content: center;
   /* Center the grid items vertically */
-  padding: 50px;
+  align-items: center;
+  padding-left: 50px;
+  padding-bottom: 50px;
   width: 800px;
 }
 
 .data-box {
-  /* Box properties */
-  width: 200px;
   /* Set the width */
-  height: 100px;
+  width: 150px;
   /* Set the height */
-  padding: 20px;
+  height: 100px;
   /* Add padding inside the box */
-  border: 1px solid #ccc;
+  padding: 20px;
   /* Add a border */
-  border-radius: 8px;
+  border: 18px solid #083D77;
   /* Add rounded corners */
-  background-color: #820263;
+  border-radius: 8px;
   /* Set background color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #a9a9a9;
   /* Add a shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* font colour */
+  color: #000;
 }
 
 .change-value {
   /* Additional styles for the content */
   font-size: 16px;
-  color: #F7F7FF;
+  color: #000;
+}
+
+/* Additional CSS for text color */
+.positive {
+  color: green;
+}
+
+.negative {
+  color: #980000;
 }
 
 

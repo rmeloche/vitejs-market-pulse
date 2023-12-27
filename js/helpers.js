@@ -5,7 +5,7 @@ export var months_to_show = 9;
 
 
 // ------------------------------------------------
-// Calculate Monthly Percent Change for a Column
+// Calculate Last Monthly Percent Change for a Dataset
 // -------------------------------------------------
 
 export function calculatePercentageChange(dataset) {
@@ -23,6 +23,22 @@ export function calculatePercentageChange(dataset) {
 
     return null;
 };
+
+// ---------------------------------------------------
+// Set Colour Based on Value - takes element and value
+// ---------------------------------------------------
+export function setColorBasedOnValue(box, value) {
+    if (value > 0) {
+        box.classList.add('positive');
+        box.classList.remove('negative');
+    } else if (value < 0) {
+        box.classList.add('negative');
+        box.classList.remove('positive');
+    } else {
+        // Optional handling for zero (or other cases)
+        box.classList.remove('positive', 'negative');
+    }
+}
 
 // -------------------
 //   COLOURS!!!  :-)
