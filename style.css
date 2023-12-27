@@ -116,6 +116,45 @@ button:focus-visible {
   padding: 50px
 }
 
+/* Style for the grid container */
+.grid-container {
+  display: grid;
+  /* Use CSS grid */
+  grid-template-columns: 1fr 1fr;
+  /* Two columns with equal width */
+  grid-gap: 10px;
+  /* Gap between grid items */
+  justify-content: center;
+  /* Center the grid items horizontally */
+  align-items: center;
+  /* Center the grid items vertically */
+  padding: 50px;
+  width: 800px;
+}
+
+.data-box {
+  /* Box properties */
+  width: 200px;
+  /* Set the width */
+  height: 100px;
+  /* Set the height */
+  padding: 20px;
+  /* Add padding inside the box */
+  border: 1px solid #ccc;
+  /* Add a border */
+  border-radius: 8px;
+  /* Add rounded corners */
+  background-color: #820263;
+  /* Set background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add a shadow */
+}
+
+.change-value {
+  /* Additional styles for the content */
+  font-size: 16px;
+  color: #F7F7FF;
+}
 
 
 @media (prefers-color-scheme: dark) {

@@ -8,43 +8,21 @@ export var months_to_show = 9;
 // Calculate Monthly Percent Change for a Column
 // -------------------------------------------------
 
-export function getMontlyPercentChange(dataTable, column) {
-    var rowIndex = dataTable.getNumberOfRows() - 1;
-    var currentMonth = dataTable.getValue(rowIndex, column);
-    var lastMonth = dataTable.getValue(rowIndex - 1, column);
-    return ((currentMonth - lastMonth) / lastMonth * 100.0).toFixed(2);
-}
+export function calculatePercentageChange(dataset) {
+    const data = dataset.data; // Assuming 'data' is an array of values in your dataset
 
-// --------------------------------------
-// Filter a DataView for Last x Months
-// --------------------------------------
+    if (data.length >= 2) {
+        const lastValue = data[data.length - 1];
+        const secondLastValue = data[data.length - 2];
 
-export function getPastXMonths(dataView, x) {
-    var lastRow = dataView.getNumberOfRows() - 1;
-    // if there are already x rows or fewer, return
-    if (dataView.getNumberOfRows() <= x) { return; }
-    var rowSet = new Array();
-    var rowSetReversed = new Array();
-    // loop through and build rowset with indexes for the past x months starting from bottom
-    for (var i = 0; i < x; i++) {
-        rowSet[i] = lastRow - i;
+        const change = lastValue - secondLastValue;
+        const percentageChange = ((change / secondLastValue) * 100).toFixed(2);
+
+        return percentageChange;
     }
-    // reverse the array to get months in order
-    rowSetReversed = rowSet.reverse();
-    // set the rows in the View
-    dataView.setRows(rowSetReversed);
-}
 
-// -----------------------------
-// Open Map Link in New Page
-// -----------------------------
-
-export function openMap() {
-    var link = document.createElement("a");
-    link.href = "https://wecarmap.com";
-    link.target = "_blank";
-    link.click();
-}
+    return null;
+};
 
 // -------------------
 //   COLOURS!!!  :-)

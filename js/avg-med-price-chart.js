@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 import { avg_med_price_options } from "./avg-med-price-options.js";
-import { colours, months_to_show } from './helpers.js'
+import { colours, months_to_show, calculatePercentageChange } from './helpers.js'
 
 export function DrawAvgMedPriceChart(code) {
 
@@ -71,27 +71,39 @@ export function DrawAvgMedPriceChart(code) {
 
             datasets.push(dataset);
 
+            const percentageChange = calculatePercentageChange(dataset);
+            if (percentageChange !== null) {
+                // Update the HTML elements or tiles with the percentage change for each dataset
+                const tileElement = document.getElementById(`market_activity_${i}`);
+                if (tileElement) {
+                    tileElement.innerText = `Percentage Change: ${percentageChange}%`;
+                }
+            }
+
+            console.log(datasets);
+
+            const chartdata = {
+                labels: months,
+                datasets: datasets
+            };
+
+            var canvas = document.getElementById("average_median_price_chart");
+            var chart = Chart.getChart(canvas); // Get the chart object associated with the canvas
+            if (chart) {
+                chart.destroy(); // Destroy the chart if it exists
+            }
+
+            var setup = {
+                type: 'bar',
+                data: chartdata,
+                options: avg_med_price_options,
+            }
+
+            chart = new Chart(canvas, setup);
+
+
+
+
         }
-        console.log(datasets);
-
-        const chartdata = {
-            labels: months,
-            datasets: datasets
-        };
-
-        var canvas = document.getElementById("average_median_price_chart");
-        var chart = Chart.getChart(canvas); // Get the chart object associated with the canvas
-        if (chart) {
-            chart.destroy(); // Destroy the chart if it exists
-        }
-
-        var setup = {
-            type: 'bar',
-            data: chartdata,
-            options: avg_med_price_options,
-        }
-        chart = new Chart(canvas, setup);
-
     }
 }
-
