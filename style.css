@@ -166,11 +166,12 @@ button:focus-visible {
   /* Add padding inside the box */
   padding: 20px;
   /* Add a border */
-  border-bottom: 4px solid #083D77;
+  border-bottom: 8px solid #083D77;
+  border-right: 8px solid #e2e2e2;
   /* Add rounded corners */
   /* border-radius: 8px; */
   /* Set background color */
-  background-color: #a9a9a9;
+  background-color: #d4e0f2;
   /* Add a shadow */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* font colour */
@@ -178,6 +179,24 @@ button:focus-visible {
   font-family: 'Arial', sans-serif;
   font-size: 20px;
   font-weight: bold;
+  /* Use flexbox for arranging elements horizontally */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.data-content {
+  /* Ensure the content aligns correctly */
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.data-title {
+  /* Adjust title's width and margin */
+  width: 100px;
+  margin-right: 10px;
 }
 
 .change-value {
@@ -193,6 +212,31 @@ button:focus-visible {
 
 .negative {
   color: #800000;
+}
+
+/* CSS for Arrow */
+.arrow-container {
+  width: 20px;
+  /* Set container width and height to accommodate the arrow */
+  height: 20px;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  display: inline-block;
+}
+
+/* Red arrow for negative values */
+.arrow.negative {
+  border-top: 20px solid #800000;
+}
+
+/* Green arrow for positive values */
+.arrow.positive {
+  border-bottom: 20px solid #355e3b;
 }
 
 

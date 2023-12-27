@@ -75,9 +75,10 @@ export function DrawAvgMedPriceChart(code) {
             if (percentageChange !== null) {
                 // Update the HTML elements or tiles with the percentage change for each dataset
                 const tileElement = document.getElementById(`prices_${i}`);
+                const arrowElement = document.getElementById(`prices_arrow_${i}`);
                 if (tileElement) {
                     tileElement.innerText = `${percentageChange}%`;
-                    setColorBasedOnValue(tileElement, percentageChange);
+                    setColorBasedOnValue(tileElement, arrowElement, percentageChange);
                 }
             }
         }

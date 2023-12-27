@@ -27,16 +27,20 @@ export function calculatePercentageChange(dataset) {
 // ---------------------------------------------------
 // Set Colour Based on Value - takes element and value
 // ---------------------------------------------------
-export function setColorBasedOnValue(box, value) {
+export function setColorBasedOnValue(box, arrow, value) {
     if (value > 0) {
         box.classList.add('positive');
+        arrow.classList.add('positive');
         box.classList.remove('negative');
+        arrow.classList.remove('negative');
     } else if (value < 0) {
         box.classList.add('negative');
+        arrow.classList.add('negative');
         box.classList.remove('positive');
+        arrow.classList.remove('positive');
     } else {
         // Optional handling for zero (or other cases)
-        box.classList.remove('positive', 'negative');
+        box.classList.remove('positive', 'negative');        
     }
 }
 
