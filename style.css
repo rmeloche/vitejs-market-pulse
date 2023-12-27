@@ -117,7 +117,28 @@ button:focus-visible {
 }
 
 #area_title {
-  font-size: 24px;
+  font-family: Arial, sans-serif;
+  /* Choose a professional font */
+  font-size: 32px;
+  /* Adjust font size as needed */
+  font-weight: bold;
+  /* Make it bold */
+  text-align: center;
+  /* Center align the text */
+  margin-top: 50px;
+  /* Add space at the top */
+  margin-bottom: 30px;
+  /* Add space at the bottom */
+  color: #333;
+  /* Choose a suitable text color */
+  text-transform: uppercase;
+  /* Transform text to uppercase */
+  letter-spacing: 2px;
+  /* Add letter spacing for clarity */
+  border-bottom: 2px solid #aaa;
+  /* Add a bottom border */
+  padding-bottom: 5px;
+  /* Space between text and border */
 }
 
 /* Style for the grid container */
@@ -145,30 +166,33 @@ button:focus-visible {
   /* Add padding inside the box */
   padding: 20px;
   /* Add a border */
-  border: 18px solid #083D77;
+  border-bottom: 4px solid #083D77;
   /* Add rounded corners */
-  border-radius: 8px;
+  /* border-radius: 8px; */
   /* Set background color */
   background-color: #a9a9a9;
   /* Add a shadow */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* font colour */
-  color: #000;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .change-value {
   /* Additional styles for the content */
-  font-size: 16px;
+  font-size: 26px;
   color: #000;
 }
 
 /* Additional CSS for text color */
 .positive {
-  color: green;
+  color: #355E3B;
 }
 
 .negative {
-  color: #980000;
+  color: #800000;
 }
 
 
