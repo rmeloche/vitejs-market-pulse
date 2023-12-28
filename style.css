@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light;
-  color: #083D77;
+  color: #333;
   background-color: #F7F7FF;
   /* color-scheme: light dark; */
   /* color: rgba(255, 255, 255, 0.87); */
@@ -98,7 +98,7 @@ button:focus-visible {
   /*Montserrat;*/
   font-size: 16px;
   color: white;
-  background-color: #083D77;
+  background-color: #333;
   /* border-color: #820263; */
 }
 
@@ -146,7 +146,8 @@ button:focus-visible {
   /* Use CSS grid */
   display: grid;
   /* Two columns with equal width */
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  /* 1fr 1fr;*/
   /* Gap between grid items */
   grid-gap: 10px;
   /* Center the grid items horizontally */
@@ -160,13 +161,13 @@ button:focus-visible {
 
 .data-box {
   /* Set the width */
-  width: 150px;
+  width: 350px;
   /* Set the height */
-  height: 100px;
+  height: 75px;
   /* Add padding inside the box */
   padding: 20px;
   /* Add a border */
-  border-bottom: 8px solid #083D77;
+  border-bottom: 8px solid #284b63;
   border-right: 8px solid #e2e2e2;
   /* Add rounded corners */
   /* border-radius: 8px; */
@@ -214,7 +215,7 @@ button:focus-visible {
 }
 
 .negative {
-  color: #800000;
+  color: #8C2B32;
 }
 
 /* CSS for Arrow */

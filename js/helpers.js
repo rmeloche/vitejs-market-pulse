@@ -1,7 +1,7 @@
 // ---------------------------------------
 // Months of Data to use in Charts
 // ---------------------------------------
-export var months_to_show = 9;
+export var months_to_show = 6;
 
 
 // ------------------------------------------------
@@ -40,7 +40,7 @@ export function setColorBasedOnValue(box, arrow, value) {
         arrow.classList.remove('positive');
     } else {
         // Optional handling for zero (or other cases)
-        box.classList.remove('positive', 'negative');        
+        box.classList.remove('positive', 'negative');
     }
 }
 
@@ -49,6 +49,8 @@ export function setColorBasedOnValue(box, arrow, value) {
 // --------------------
 
 export var colours = [
+    '#284b63',    // 
+    '#3c6e71',    //
     '#083D77',   // 0 yale blue (palette with byz)
     '#820263',   // 1 byzantium (dark fuscia)
     '#007d9f',   // 2 cerulean
@@ -69,8 +71,7 @@ export var colours = [
     '#9f007d',   // 17 pink
     '#293F14',    // 18 pakistan green (palette with byz)
     '#32A287',    // 19 zomp (palette with byz)
-    '420f6b',     // 20 dark purple
-    'ee3e41',     // 21  MC red
+    '#420f6b',     // 20 dark purple
 ];
 
 // ----------------------------------------
