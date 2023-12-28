@@ -178,25 +178,28 @@ button:focus-visible {
   color: #333;
   font-family: 'Arial', sans-serif;
   font-size: 20px;
-  font-weight: bold;
   /* Use flexbox for arranging elements horizontally */
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 5px;
+  /* Adjust margin as needed */
 }
 
 .data-content {
   /* Ensure the content aligns correctly */
   display: flex;
+  flex-direction: row;
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 .data-title {
   /* Adjust title's width and margin */
-  width: 100px;
-  margin-right: 10px;
+  /*width: 100px;*/
+  font-weight: bold;
 }
 
 .change-value {
@@ -219,6 +222,7 @@ button:focus-visible {
   width: 20px;
   /* Set container width and height to accommodate the arrow */
   height: 20px;
+  margin-right: 5px;
 }
 
 .arrow {
@@ -227,6 +231,7 @@ button:focus-visible {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   display: inline-block;
+
 }
 
 /* Red arrow for negative values */
