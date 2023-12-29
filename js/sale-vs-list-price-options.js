@@ -1,5 +1,5 @@
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { highest_value } from "./sale-vs-list-price-chart";
+import { highest_value, lowest_value } from "./sale-vs-list-price-chart";
 
 
 const formatter = new Intl.NumberFormat("en-CA", {
@@ -66,7 +66,7 @@ export const sale_list_price_options = {
                 },
                 padding: 20,
             },
-            min: 300000,
+            min: lowest_value,
             max: highest_value,
             //suggestedMax: 650000,
             startAtZero: false,

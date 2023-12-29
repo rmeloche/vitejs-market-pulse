@@ -94,8 +94,8 @@ export function DrawSaleVSListPriceChart(code) {
 
                 var ctx = document.getElementById('sale_vs_list_price_chart').getContext('2d');
 
-                var gradient = ctx.createLinearGradient(0, 0, 0, 300);
-                gradient.addColorStop(0, colours[0]);
+                var gradient = ctx.createLinearGradient(0, 0, 0, 800);
+                gradient.addColorStop(0, 'white');
                 gradient.addColorStop(1, colours[1]);
 
                 var dataset = {
@@ -125,20 +125,19 @@ export function DrawSaleVSListPriceChart(code) {
         };
 
         // calculate the max for the chart
-        highest_value = parseInt(highest_value) + 60000;
+        highest_value = parseInt(highest_value) + 20000;
         highest_value = Math.ceil(highest_value / 10000) * 10000;
-        lowest_value = parseInt(lowest_value) - 60000;
+        lowest_value = parseInt(lowest_value) - 20000;
         lowest_value = Math.round(lowest_value / 10000) * 10000;
 
         let chart_options = sale_list_price_options;
         chart_options.scales.y.max = highest_value;
         chart_options.scales.y.min = lowest_value;
 
-
         var canvas = document.getElementById("sale_vs_list_price_chart");
         var chart = Chart.getChart(canvas); // Get the chart object associated with the canvas
         if (chart) {
-            chart.destroy(); // Destroy the chart if it exists
+            chart.destroy(); // Destroy the chart if it exists so we can redraw it
         }
 
         var setup = {
