@@ -141,6 +141,13 @@ button:focus-visible {
   /* Space between text and border */
 }
 
+/* style for MONTHLY CHANGE section */
+#monthly_change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Style for the grid container */
 .grid-container {
   /* Use CSS grid */
@@ -156,12 +163,12 @@ button:focus-visible {
   align-items: center;
   padding-left: 50px;
   padding-bottom: 50px;
-  width: 800px;
+  width: 600px;
 }
 
 .data-box {
   /* Set the width */
-  width: 350px;
+  width: 250px;
   /* Set the height */
   height: 75px;
   /* Add padding inside the box */
@@ -178,7 +185,7 @@ button:focus-visible {
   /* font colour */
   color: #333;
   font-family: 'Arial', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   /* Use flexbox for arranging elements horizontally */
   display: flex;
   flex-direction: column;
@@ -201,6 +208,7 @@ button:focus-visible {
   /* Adjust title's width and margin */
   /*width: 100px;*/
   font-weight: bold;
+  font-size: 26px;
 }
 
 .change-value {
@@ -223,7 +231,7 @@ button:focus-visible {
   width: 20px;
   /* Set container width and height to accommodate the arrow */
   height: 20px;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 .arrow {
