@@ -108,7 +108,6 @@ export function DrawSaleVSListPriceChart(code) {
                         align: 'bottom',
                     }
                 }
-
             }
 
             datasets.push(dataset);

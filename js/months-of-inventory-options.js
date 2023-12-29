@@ -6,7 +6,7 @@ export const moi_options = {
             position: 'top',
             color: '#000000',
             labels: {
-                usePointStyle: true,
+                usePointStyle: false,
             }
         },
         title: {

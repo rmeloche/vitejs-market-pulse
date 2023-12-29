@@ -22,7 +22,7 @@ export const sale_list_price_options = {
             position: 'top',
             color: '#000000',
             labels: {
-                usePointStyle: false,
+                usePointStyle: true,
             }
         },
         title: {
