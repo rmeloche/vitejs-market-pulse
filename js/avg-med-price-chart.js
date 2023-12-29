@@ -71,6 +71,7 @@ export function DrawAvgMedPriceChart(code) {
 
             datasets.push(dataset);
 
+            // Add data to Monthly Change boxes
             const percentageChange = calculatePercentageChange(dataset);
             if (percentageChange !== null) {
                 // Update the HTML elements or tiles with the percentage change for each dataset

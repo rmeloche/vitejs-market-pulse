@@ -70,9 +70,10 @@ export function DrawMarketActivityChart(code) {
 
             datasets.push(dataset);
 
+            // Add data to Montly Change boxes
             const percentageChange = calculatePercentageChange(dataset);
             if (percentageChange !== null) {
-                // Update the HTML elements or tiles with the percentage change for each dataset
+                // Update the boxes with the percentage change for each dataset
                 const tileElement = document.getElementById(`market_activity_${i}`);
                 const arrowElement = document.getElementById(`market_activity_arrow_${i}`);
                 if (tileElement) {
