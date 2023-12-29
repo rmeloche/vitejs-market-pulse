@@ -13,6 +13,8 @@ import { DrawAvgMedPriceChart } from './js/avg-med-price-chart.js';
 import { DrawSaleVSListPriceChart } from './js/sale-vs-list-price-chart.js';
 import { drawSNLRChart } from './js/snlr-chart.js';
 import { drawDaysOnMarketChart } from './js/days-on-market-chart.js';
+import { drawMonthsOfInventoryChart } from './js/months-of-inventory-chart.js';
+
 
 const appDiv = document.getElementById('app-title');
 appDiv.innerHTML = '<h1>Windsor-Essex County Market Pulse</h1>';
@@ -100,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
   DrawSaleVSListPriceChart("ALL");
   drawSNLRChart("ALL");
   drawDaysOnMarketChart("ALL");
+  drawMonthsOfInventoryChart("ALL");
 });
 
 // Area Charts - Get option and refresh charts
@@ -120,6 +123,7 @@ function redrawCharts(sheetCode) {
   DrawSaleVSListPriceChart(sheetCode);
   drawSNLRChart(sheetCode);
   drawDaysOnMarketChart(sheetCode);
+  drawMonthsOfInventoryChart(sheetCode);
 }
 
 function setAreaTitle(area) {
