@@ -90,7 +90,7 @@ export function DrawSaleVSListPriceChart(code) {
                     borderColor: colours[i - 1],
                     data: series_data
                 }
-            } else {
+            } else { //average list price data set
 
                 var ctx = document.getElementById('sale_vs_list_price_chart').getContext('2d');
 
@@ -103,7 +103,10 @@ export function DrawSaleVSListPriceChart(code) {
                     backgroundColor: gradient,
                     borderColor: colours[i - 1],
                     fill: '-1',
-                    data: series_data
+                    data: series_data,
+                    datalabels: {
+                        align: 'bottom',
+                    }
                 }
 
             }
