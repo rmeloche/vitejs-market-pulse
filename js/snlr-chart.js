@@ -117,7 +117,7 @@ export function drawSNLRChart(code) {
             data: {
                 datasets: [{
                     label: 'My First Dataset',
-                    data: [40, 60, 100],
+                    data: [50, 50, 50],
                     backgroundColor: [
                         'rgb(255, 99, 132)',
                         'rgb(54, 162, 235)',

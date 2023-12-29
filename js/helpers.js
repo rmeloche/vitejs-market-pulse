@@ -49,8 +49,8 @@ export function setColorBasedOnValue(box, arrow, value) {
 // --------------------
 
 export var colours = [
-    '#284b63',    // 
-    '#3c6e71',    //
+    '#004c6d',    // 
+    '#7aa6c2',    //
     '#083D77',   // 0 yale blue (palette with byz)
     '#820263',   // 1 byzantium (dark fuscia)
     '#007d9f',   // 2 cerulean
