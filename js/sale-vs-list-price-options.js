@@ -40,7 +40,7 @@ export const sale_list_price_options = {
             formatter: function (value, context) {
                 return "$" + value.toLocaleString();
             },
-            color: 'white',
+            color: '#333',
             font: {
                 //weight: 'bold',
                 size: 14,

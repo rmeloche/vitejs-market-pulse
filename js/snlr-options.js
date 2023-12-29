@@ -86,6 +86,18 @@ export const snlr_options = {
                     }
                 }
             }
+        },
+        datalabels: {
+            anchor: 'end',
+            align: 'top',
+            formatter: function (value, context) {
+                return value.toLocaleString() + "%";
+            },
+            color: '#333',
+            font: {
+                //weight: 'bold',
+                size: 14,
+            }
         }
 
     },
