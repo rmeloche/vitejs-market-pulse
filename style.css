@@ -253,6 +253,40 @@ button:focus-visible {
   border-bottom: 20px solid #355e3b;
 }
 
+.dial {
+  width: 200px;
+  /*padding: 10px*/
+}
+
+.dial-box {
+  /* Set the width */
+  width: 250px;
+  /* Set the height */
+  height: 175px;
+  /* Add padding inside the box */
+  padding: 20px;
+  /* Add a border */
+  border-bottom: 8px solid #284b63;
+  border-right: 8px solid #e2e2e2;
+  /* Add rounded corners */
+  /* border-radius: 8px; */
+  /* Set background color */
+  background-color: #d4e0f2;
+  /* Add a shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* font colour */
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  /* Use flexbox for arranging elements horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 5px;
+  /* Adjust margin as needed */
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

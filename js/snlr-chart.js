@@ -87,10 +87,14 @@ export function drawSNLRChart(code) {
         console.log("*****SNLR DATASET*****");
         console.log(datasets);
 
+        var lastValue = dataset.data[data.length - 1];
+
         const chartdata = {
             labels: months,
             datasets: datasets
         };
+
+        // Create the SNRL Line Chart
 
         var canvas = document.getElementById("snlr_chart");
         var chart = Chart.getChart(canvas); // Get the chart object associated with the canvas
@@ -103,6 +107,33 @@ export function drawSNLRChart(code) {
             options: snlr_options,
         }
         chart = new Chart(canvas, setup);
+
+        // Create the SNLR guage/donut chart
+        var dial_canvas = document.getElementById("snlr_dial");
+        var dial_chart = Chart.getChart(dial_canvas);
+        if (dial_chart) { dial_chart.destroy(); }
+        var dial_setup = {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [40, 60, 100],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                cutout: 20,
+                circumference: 180,
+                rotation: 270,
+                aspectRatio: 2,
+            }
+        }
+        dial_chart = new Chart(dial_canvas, dial_setup);
 
     }
 }

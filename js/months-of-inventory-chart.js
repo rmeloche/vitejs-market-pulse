@@ -78,6 +78,8 @@ export function drawMonthsOfInventoryChart(code) {
             datasets: datasets
         };
 
+        // Create the Months of Inventory Bar Chart
+
         var canvas = document.getElementById("moi_chart");
         var chart = Chart.getChart(canvas); // Get the chart object associated with the canvas
         if (chart) {
