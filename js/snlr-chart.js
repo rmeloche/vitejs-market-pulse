@@ -50,27 +50,15 @@ export function drawSNLRChart(code) {
         const datasets = [];
         for (var i = 1; i < dataj.cols.length; i++) {
             const series_data = [];
-            const buyers_data = [];
-            const balanced_data = [];
-            const sellers_data = [];
             for (var j = 0; j < lastNRows.length; j++) {
                 if (lastNRows[j].c[i] != null) {
                     if (lastNRows[j].c[i].v != null) {
                         series_data.push(lastNRows[j].c[i].v);
-                        buyers_data.push(40);
-                        balanced_data.push(60);
-                        sellers_data.push(100);
                     } else {
                         series_data.push(0);
-                        buyers_data.push(40);
-                        balanced_data.push(60);
-                        sellers_data.push(100);
                     }
                 } else {
                     series_data.push(0);
-                    buyers_data.push(40);
-                    balanced_data.push(60);
-                    sellers_data.push(100);
                 }
 
             }
@@ -84,7 +72,7 @@ export function drawSNLRChart(code) {
                 datalabels: {
                     anchor: 'end',
                     align: 'bottom',
-                    color: 'white',
+                    color: '#333',
                     font: {
                         size: 14,
                     }
@@ -93,53 +81,6 @@ export function drawSNLRChart(code) {
 
             datasets.push(dataset);
 
-            var buyerset = {
-                label: "Buyer's Market",
-                backgroundColor: colours[6],
-                borderColor: colours[6],
-                type: 'line',
-                fill: 'stack',
-                data: buyers_data,
-                datalabels: {
-                    labels: {
-                        title: null
-                    }
-                }
-            };
-
-            //datasets.push(buyerset);
-
-            var balanceset = {
-                label: "Balanced Market",
-                backgroundColor: colours[7],
-                borderColor: colours[7],
-                type: 'line',
-                fill: 'stack',
-                data: balanced_data,
-                datalabels: {
-                    labels: {
-                        title: null
-                    }
-                }
-            };
-
-            //datasets.push(balanceset);
-
-            var sellerset = {
-                label: "Seller's Market",
-                backgroundColor: colours[8],
-                borderColor: colours[8],
-                type: 'line',
-                fill: 'stack',
-                data: sellers_data,
-                datalabels: {
-                    labels: {
-                        title: null
-                    }
-                }
-            };
-
-            //datasets.push(sellerset);
 
         }
 
