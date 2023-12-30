@@ -1,5 +1,5 @@
 import Chart from 'chart.js/auto';
-import { moi_options } from "./months-of-inventory-options.js";
+import { moi_dial_options, moi_options } from "./months-of-inventory-options.js";
 import { colours, months_to_show } from './helpers.js'
 
 export function drawMonthsOfInventoryChart(code) {
@@ -73,6 +73,8 @@ export function drawMonthsOfInventoryChart(code) {
         }
         console.log(datasets);
 
+        var lastValue = dataset.data[data.length - 1];
+
         const chartdata = {
             labels: months,
             datasets: datasets
@@ -91,6 +93,29 @@ export function drawMonthsOfInventoryChart(code) {
             options: moi_options,
         }
         chart = new Chart(canvas, setup);
+
+        // Create the Months of Inventory guage/donut chart
+
+        var dial_canvas = document.getElementById("moi_dial");
+        var dial_chart = Chart.getChart(dial_canvas);
+        if (dial_chart) { dial_chart.destroy(); }
+        var dial_setup = {
+            type: 'doughnut',
+            data: {
+                labels: ['Buyers', 'Balanced', 'Sellers'],
+                datasets: [{
+                    data: [50, 50, 50],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                }]
+            },
+            options: moi_dial_options,
+        }
+
+        dial_chart = new Chart(dial_canvas, dial_setup);
 
     }
 }

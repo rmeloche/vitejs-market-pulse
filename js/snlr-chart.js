@@ -99,6 +99,7 @@ export function drawSNLRChart(code) {
         chart = new Chart(canvas, setup);
 
         // Create the SNLR guage/donut chart
+
         var dial_canvas = document.getElementById("snlr_dial");
         var dial_chart = Chart.getChart(dial_canvas);
         if (dial_chart) { dial_chart.destroy(); }

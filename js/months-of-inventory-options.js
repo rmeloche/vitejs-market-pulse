@@ -47,3 +47,25 @@ export const moi_options = {
         }
     }
 };
+
+
+export const moi_dial_options = {
+    cutout: 30,
+    circumference: 180,
+    rotation: 270,
+    aspectRatio: 1.5,
+    plugins: {
+        tooltip: {
+            enabled: false
+        },
+        legend: {
+            display: false
+        },
+        datalabels: {
+            formatter: function (value, context) {
+                return context.chart.data.labels[context.dataIndex];
+            },
+            color: '#fff',
+        },
+    }
+};
