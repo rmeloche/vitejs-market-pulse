@@ -10,12 +10,10 @@
 </head>
 
 <body>
-  <!-- This is a dummy script tag so that FF will show the page after the CSS is loaded -->
-  <script>0</script>
   <div id="app">
     <div id="app-title"></div>
 
-    <!-- MENU -->
+    <!-- NAV MENU -->
     <nav>
       <a id="mktpls-area-charts-nav" class="btn" href="#mktpls-area-charts-div">Area Charts</a>
       &nbsp;
@@ -28,11 +26,12 @@
     <!-- AREA CHARTS -->
     <div id="mktpls-area-charts-div" class="section">
       <h2>Area Charts</h2>
-      <p class="words">
-        Select an area to generate charts
-      </p>
-      <select id="area"></select>&nbsp;
-      <a id="area_map_link" class="btn" href="https://wecarmap.com" target="_blank">Area Map</a>
+      <div class="padded">
+        <a id="area_map_link" class="btn" href="https://wecarmap.com" target="_blank">Area Map</a>
+      </div>
+      <div>Select an area: <select id="area"></select>&nbsp;</div>
+
+
 
       <div id="area_title"></div>
 
