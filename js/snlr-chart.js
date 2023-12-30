@@ -69,19 +69,9 @@ export function drawSNLRChart(code) {
                 backgroundColor: colours[i - 1],
                 borderColor: colours[i - 1],
                 data: series_data,
-                datalabels: {
-                    anchor: 'end',
-                    align: 'bottom',
-                    color: '#333',
-                    font: {
-                        size: 14,
-                    }
-                }
             };
 
             datasets.push(dataset);
-
-
         }
 
         console.log("*****SNLR DATASET*****");
@@ -127,10 +117,10 @@ export function drawSNLRChart(code) {
                 }]
             },
             options: {
-                cutout: 20,
+                cutout: 30,
                 circumference: 180,
                 rotation: 270,
-                aspectRatio: 2,
+                aspectRatio: 1.5,
             }
         }
         dial_chart = new Chart(dial_canvas, dial_setup);
