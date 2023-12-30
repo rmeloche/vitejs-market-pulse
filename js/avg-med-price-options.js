@@ -35,6 +35,9 @@ export const avg_med_price_options = {
             font: {
                 //weight: 'bold',
                 size: 14,
+            },
+            display: function (context) {
+                return context.dataset.data[context.dataIndex] !== 0; // or >= 1 or ...
             }
         }
     },
