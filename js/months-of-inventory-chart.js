@@ -106,9 +106,9 @@ export function drawMonthsOfInventoryChart(code) {
                 datasets: [{
                     data: [50, 50, 50],
                     backgroundColor: [
-                        'rgb(255, 99, 132)',
+                        '#004c6d',
                         'rgb(54, 162, 235)',
-                        'rgb(255, 205, 86)'
+                        '#7aa6c2'
                     ],
                 }]
             },
