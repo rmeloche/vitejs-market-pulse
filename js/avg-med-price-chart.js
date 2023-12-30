@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 import { avg_med_price_options } from "./avg-med-price-options.js";
-import { colours, months_to_show, calculatePercentageChange, setColorBasedOnValue } from './helpers.js'
+import { colours, months_to_show, calculatePercentageChange, setColorBasedOnValue, calculateDifference, setDiffColorBasedOnValue } from './helpers.js'
 
 export var lowest_value;
 export var highest_value;
@@ -84,6 +84,7 @@ export function DrawAvgMedPriceChart(code) {
             datasets.push(dataset);
 
             // Add data to Monthly Change boxes
+            // Percent Change
             const percentageChange = calculatePercentageChange(dataset);
             if (percentageChange !== null) {
                 // Update the HTML elements or tiles with the percentage change for each dataset
@@ -93,6 +94,13 @@ export function DrawAvgMedPriceChart(code) {
                     tileElement.innerText = `${percentageChange}%`;
                     setColorBasedOnValue(tileElement, arrowElement, percentageChange);
                 }
+            }
+            // Difference
+            const difference = calculateDifference(dataset);
+            const diffElement = document.getElementById(`prices_diff_${i}`);
+            if (diffElement) {
+                diffElement.innerText = `${difference}`;
+                setDiffColorBasedOnValue(diffElement, difference);
             }
         }
 

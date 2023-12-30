@@ -5,7 +5,7 @@ export var months_to_show = 6;
 
 
 // ------------------------------------------------
-// Calculate Last Monthly Percent Change for a Dataset
+// Calculate Monthly Percent Change for a Dataset
 // -------------------------------------------------
 
 export function calculatePercentageChange(dataset) {
@@ -24,6 +24,26 @@ export function calculatePercentageChange(dataset) {
     return null;
 };
 
+// ------------------------------------------------
+// Calculate Monthly Difference for a Dataset
+// -------------------------------------------------
+
+export function calculateDifference(dataset) {
+    const data = dataset.data; // Assuming 'data' is an array of values in your dataset
+
+    if (data.length >= 2) {
+        const lastValue = data[data.length - 1];
+        const secondLastValue = data[data.length - 2];
+
+        const change = lastValue - secondLastValue;
+
+        return change;
+    }
+
+    return null;
+};
+
+
 // ---------------------------------------------------
 // Set Colour Based on Value - takes element and value
 // ---------------------------------------------------
@@ -38,6 +58,19 @@ export function setColorBasedOnValue(box, arrow, value) {
         arrow.classList.add('negative');
         box.classList.remove('positive');
         arrow.classList.remove('positive');
+    } else {
+        // Optional handling for zero (or other cases)
+        box.classList.remove('positive', 'negative');
+    }
+}
+
+export function setDiffColorBasedOnValue(box, value) {
+    if (value > 0) {
+        box.classList.add('positive');
+        box.classList.remove('negative');
+    } else if (value < 0) {
+        box.classList.add('negative');
+        box.classList.remove('positive');
     } else {
         // Optional handling for zero (or other cases)
         box.classList.remove('positive', 'negative');
