@@ -131,8 +131,14 @@ export const snlr_dial_options = {
         tooltip: {
             enabled: false
         },
-        datalabels: {
+        legend: {
             display: false
-        }
-    },
-}
+        },
+        datalabels: {
+            formatter: function (value, context) {
+                return context.chart.data.labels[context.dataIndex];
+            },
+            color: '#fff',
+        },
+    }
+};

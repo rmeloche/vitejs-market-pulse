@@ -105,6 +105,7 @@ export function drawSNLRChart(code) {
         var dial_setup = {
             type: 'doughnut',
             data: {
+                labels: ['Buyers', 'Balanced', 'Sellers'],
                 datasets: [{
                     data: [50, 50, 50],
                     backgroundColor: [
