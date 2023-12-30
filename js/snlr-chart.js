@@ -1,5 +1,5 @@
 import Chart from 'chart.js/auto';
-import { snlr_options } from "./snlr-options.js";
+import { snlr_dial_options, snlr_options } from "./snlr-options.js";
 import { colours, months_to_show } from './helpers.js'
 
 
@@ -106,23 +106,17 @@ export function drawSNLRChart(code) {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    label: 'My First Dataset',
                     data: [50, 50, 50],
                     backgroundColor: [
                         'rgb(255, 99, 132)',
                         'rgb(54, 162, 235)',
                         'rgb(255, 205, 86)'
                     ],
-                    hoverOffset: 4
                 }]
             },
-            options: {
-                cutout: 30,
-                circumference: 180,
-                rotation: 270,
-                aspectRatio: 1.5,
-            }
+            options: snlr_dial_options,
         }
+
         dial_chart = new Chart(dial_canvas, dial_setup);
 
     }

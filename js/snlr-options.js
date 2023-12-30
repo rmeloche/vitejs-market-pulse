@@ -120,3 +120,19 @@ export const snlr_options = {
         }
     }
 };
+
+
+export const snlr_dial_options = {
+    cutout: 30,
+    circumference: 180,
+    rotation: 270,
+    aspectRatio: 1.5,
+    plugins: {
+        tooltip: {
+            enabled: false
+        },
+        datalabels: {
+            display: false
+        }
+    },
+}
