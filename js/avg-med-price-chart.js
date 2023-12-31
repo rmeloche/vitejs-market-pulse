@@ -84,6 +84,7 @@ export function DrawAvgMedPriceChart(code) {
             datasets.push(dataset);
 
             // Add data to Monthly Change boxes
+
             // Percent Change
             const percentageChange = calculatePercentageChange(dataset);
             if (percentageChange !== null) {
@@ -99,7 +100,12 @@ export function DrawAvgMedPriceChart(code) {
             const difference = calculateDifference(dataset);
             const diffElement = document.getElementById(`prices_diff_${i}`);
             if (diffElement) {
-                diffElement.innerText = `${difference}`;
+                if (difference < 0) {
+                    diffElement.innerText = "Decrease of $" + Math.abs(difference).toLocaleString();
+                }
+                else {
+                    diffElement.innerText = "Increase of $" + difference.toLocaleString();
+                }
                 setDiffColorBasedOnValue(diffElement, difference);
             }
         }
