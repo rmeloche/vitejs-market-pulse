@@ -85,6 +85,11 @@ export function DrawAvgMedPriceChart(code) {
 
             // Add data to Monthly Change boxes
 
+            // Value for latest month charted
+            var lastValue = series_data[series_data.length - 1].toLocaleString();
+            const currentElement = document.getElementById(`prices_current_${i}`);
+            currentElement.innerText = `$${lastValue}`
+
             // Percent Change
             const percentageChange = calculatePercentageChange(dataset);
             if (percentageChange !== null) {
@@ -101,12 +106,12 @@ export function DrawAvgMedPriceChart(code) {
             const diffElement = document.getElementById(`prices_diff_${i}`);
             if (diffElement) {
                 if (difference < 0) {
-                    diffElement.innerText = "Decrease of $" + Math.abs(difference).toLocaleString();
+                    diffElement.innerText = "Down $" + Math.abs(difference).toLocaleString();
                 }
                 else {
-                    diffElement.innerText = "Increase of $" + difference.toLocaleString();
+                    diffElement.innerText = "Up $" + difference.toLocaleString();
                 }
-                setDiffColorBasedOnValue(diffElement, difference);
+                //setDiffColorBasedOnValue(diffElement, difference);
             }
         }
 

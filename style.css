@@ -35,9 +35,24 @@ body {
   min-height: 100vh;
 }
 
+.header-container {
+  background-color: #284b63;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+.nav-container {
+  background-color: #e2e2e2;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0;
 }
 
 h2 {
@@ -50,7 +65,8 @@ h2 {
 }
 
 #app {
-  max-width: 1280px;
+  /*max-width: 1280px;*/
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;

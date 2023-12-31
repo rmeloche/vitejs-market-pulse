@@ -11,10 +11,12 @@
 
 <body>
   <div id="app">
-    <div id="app-title"></div>
+    <div class="header-container">
+      <div id="app-title"></div>
+    </div>
 
     <!-- NAV MENU -->
-    <nav>
+    <nav class="nav-container">
       <a id="mktpls-area-charts-nav" class="btn" href="#mktpls-area-charts-div">Area Charts</a>
       &nbsp;
       <a id="mktpls-styles-price-ranges-nav" class="btn" href="#mktpls-styles-price-ranges-div">Styles and Price
@@ -65,24 +67,27 @@
           <!-- Data Box for Average Price -->
           <div class="data-box">
             <span class="data-title">Average Price</span>
+            <div id="prices_current_1" class="change-value"></div>
             <div class="data-content">
               <div class="arrow-container">
                 <div id="prices_arrow_1" class="arrow positive"></div>
               </div>
               <div id="prices_1" class="change-value"></div>
             </div>
-            <div id="prices_diff_1"></div>
+            <div id="prices_diff_1" class="change-value"></div>
           </div>
 
           <!-- Data Box for Median Price -->
           <div class="data-box">
             <span class="data-title">Median Price</span>
+            <div id="prices_current_2" class="change-value"></div>
             <div class="data-content">
               <div class="arrow-container">
                 <div id="prices_arrow_2" class="arrow positive"></div>
               </div>
               <div id="prices_2" class="change-value"></div>
             </div>
+            <div id="prices_diff_2" class="change-value"></div>
           </div>
 
           <div class="dial-box">
