@@ -38,7 +38,6 @@ body {
 .header-container {
   background-color: #284b63;
   width: 100%;
-  box-sizing: border-box;
   padding: 50px;
 }
 
@@ -68,7 +67,7 @@ h2 {
   /*max-width: 1280px;*/
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
