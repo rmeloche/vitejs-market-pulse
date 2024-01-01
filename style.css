@@ -39,7 +39,25 @@ body {
   background-color: #284b63;
   width: 100%;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
+
+#app-title {
+  text-align: left;
+  width: 50%;
+}
+
+.vertical-bar {
+  width: 4px;
+  /* Set the width of the bar */
+  height: 100px;
+  /* Set the height of the bar */
+  background-color: #333;
+  /* Set the color of the bar */
+}
+
 
 .nav-container {
   background-color: #284b63;
