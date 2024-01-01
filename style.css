@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light;
+  /*color-scheme: light;*/
   color: #333;
   background-color: #F7F7FF;
   /* color-scheme: light dark; */
@@ -18,12 +18,12 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #284b63;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #535bf2;
+  color: #284b63;
 }
 
 body {
@@ -37,6 +37,7 @@ body {
 
 .header-container {
   background-color: #284b63;
+  color: #f7f7ff;
   width: 100%;
   padding: 10 0 10 10;
   display: flex;
@@ -91,7 +92,7 @@ h2 {
   /*Montserrat;*/
   font-size: 16px;
   color: white;
-  background-color: #333;
+  background-color: #EE792F;
   cursor: pointer;
   /* border-color: #820263; */
 }
@@ -288,6 +289,7 @@ h2 {
   /* Adjust margin as needed */
 }
 
+/*
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -303,3 +305,5 @@ h2 {
     background-color: #f9f9f9;
   }
 }
+
+*/
