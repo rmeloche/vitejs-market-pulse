@@ -17,7 +17,7 @@ import { drawMonthsOfInventoryChart } from './js/months-of-inventory-chart.js';
 
 
 const appDiv = document.getElementById('app-title');
-appDiv.innerHTML = '<h1>Windsor-Essex County Market Pulse</h1>';
+appDiv.innerHTML = '<h2>Windsor-Essex County Market Pulse</h2>';
 
 // --------------------------
 //  Show/Hide App Sections

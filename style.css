@@ -38,14 +38,14 @@ body {
 .header-container {
   background-color: #284b63;
   width: 100%;
-  padding: 50px;
+  padding: 10px;
 }
 
 .nav-container {
-  background-color: #e2e2e2;
+  background-color: #284b63;
   width: 100%;
   box-sizing: border-box;
-  padding: 50px;
+  padding: 20px;
 }
 
 h1 {
