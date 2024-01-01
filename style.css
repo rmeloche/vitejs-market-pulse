@@ -38,15 +38,10 @@ body {
 .header-container {
   background-color: #284b63;
   width: 100%;
-  padding: 10px;
+  padding: 10 0 10 10;
   display: flex;
   align-items: center;
-  justify-content: left;
-}
-
-#app-title {
-  text-align: left;
-  width: 50%;
+  justify-content: center;
 }
 
 .vertical-bar {
@@ -115,6 +110,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
 }
 
 .chart {
@@ -148,7 +144,7 @@ h2 {
 }
 
 /* style for MONTHLY CHANGE section */
-#monthly_change {
+.container-centered {
   display: flex;
   align-items: center;
   justify-content: center;

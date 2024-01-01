@@ -14,23 +14,23 @@
 
     <div class="header-container">
       <div id="app-title"></div>
-      <div class="vertical-bar"></div>
-
-
-      <!-- NAV MENU -->
-      <nav class="nav-container">
-        <a id="mktpls-area-charts-nav" class="btn" href="#mktpls-area-charts-div">Area Charts</a>
-        &nbsp;
-        <a id="mktpls-styles-price-ranges-nav" class="btn" href="#mktpls-styles-price-ranges-div">Styles and Price
-          Ranges</a>
-        &nbsp;
-        <a id="mktpls-custom-nav" class="btn" href="#mktpls-custom-div">Custom Charts</a>
-      </nav>
     </div>
+
+
+    <!-- NAV MENU -->
+    <nav class="nav-container">
+      <a id="mktpls-area-charts-nav" class="btn" href="#mktpls-area-charts-div">Areas Charts</a>
+      &nbsp;
+      <a id="mktpls-styles-price-ranges-nav" class="btn" href="#mktpls-styles-price-ranges-div">Styles and Price
+        Ranges</a>
+      &nbsp;
+      <a id="mktpls-custom-nav" class="btn" href="#mktpls-custom-div">Custom Charts</a>
+    </nav>
+
+
 
     <!-- AREA CHARTS -->
     <div id="mktpls-area-charts-div" class="section">
-      <h2>Area Charts</h2>
       <div class="padded">
         <a id="area_map_link" class="btn" href="https://wecarmap.com" target="_blank">Area Map</a>
       </div>
@@ -42,8 +42,8 @@
 
       <!-- MONTHLY CHANGE OVERVIEW -->
 
-      <h2>Monthly Change</h2>
-      <div id="monthly_change">
+      <h2>Monthly Snapshot</h2>
+      <div id="monthly_change" class="container-centered">
         <div id="price_boxes" class="grid-container">
           <!-- Data Box for Homes Sold -->
           <div class="data-box">
@@ -108,7 +108,8 @@
 
 
 
-      <h2>Trends</h2>
+      <h2>Monthly Trends</h2>
+      <div id="charts" class="container-centered"></div>
 
 
       <!-- CHART DIVS -->
@@ -119,26 +120,27 @@
       <div class="chart"><canvas id="dom_chart"></canvas></div>
       <div class="chart"><canvas id="moi_chart"></canvas></div>
     </div>
+  </div>
 
-    <!-- STYLES AND PRICE RANGES -->
-    <div id="mktpls-styles-price-ranges-div">
-      <h2>Popular Home Styles</h2>
-    </div>
+  <!-- STYLES AND PRICE RANGES -->
+  <div id="mktpls-styles-price-ranges-div">
+    <h2>Popular Home Styles</h2>
+  </div>
 
-    <!-- CUSTOM CHARTS -->
-    <div id="mktpls-custom-div">
-      <h2>Custom Charts</h2>
-      <p>Required data: CSV file or google sheet link with Listing Date, List Price, Status, Status Change Date, Sale
-        Price</p>
-      <p>Useful for
-      <ul>
-        <li>Open houses - provide stats on the local neighbourhood to visitors and neighbours</li>
-        <li>Homeowner clients - market update on their local area</li>
-        <li>Prospects or clients looking to buy - provide information on targeted neighbourhoods of interest</li>
-      </ul>
-      </p>
-      <div class="chart"><canvas id="test"></canvas></div>
-    </div>
+  <!-- CUSTOM CHARTS -->
+  <div id="mktpls-custom-div">
+    <h2>Custom Charts</h2>
+    <p>Required data: CSV file or google sheet link with Listing Date, List Price, Status, Status Change Date, Sale
+      Price</p>
+    <p>Useful for
+    <ul>
+      <li>Open houses - provide stats on the local neighbourhood to visitors and neighbours</li>
+      <li>Homeowner clients - market update on their local area</li>
+      <li>Prospects or clients looking to buy - provide information on targeted neighbourhoods of interest</li>
+    </ul>
+    </p>
+    <div class="chart"><canvas id="test"></canvas></div>
+  </div>
   </div>
 
 
