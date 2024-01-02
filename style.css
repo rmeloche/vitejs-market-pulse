@@ -39,7 +39,7 @@ body {
   background-color: #284b63;
   color: #f7f7ff;
   width: 100%;
-  padding: 10 0 10 10;
+  /* padding: 10 0 10 10; */
   display: flex;
   align-items: center;
   justify-content: center;
