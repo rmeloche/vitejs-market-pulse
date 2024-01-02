@@ -92,7 +92,7 @@ h2 {
   /*Montserrat;*/
   font-size: 16px;
   color: #333;
-  background-color: #D9DCD6;
+  background-color: #d4e0f2;
   cursor: pointer;
   /* border-color: #820263; */
 }
@@ -184,7 +184,7 @@ h2 {
   /* Set background color */
   background-color: #d4e0f2;
   /* Add a shadow */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
   /* font colour */
   color: #333;
   font-family: 'Arial', sans-serif;
