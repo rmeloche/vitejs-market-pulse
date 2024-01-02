@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 import { activity_options } from "./market-activity-options.js";
-import { colours, months_to_show, calculatePercentageChange, setColorBasedOnValue } from './helpers.js';
+import { colours, months_to_show, calculatePercentageChange, setColorBasedOnValue, calculateDifference } from './helpers.js';
 
 export function DrawMarketActivityChart(code) {
 
@@ -70,7 +70,15 @@ export function DrawMarketActivityChart(code) {
 
             datasets.push(dataset);
 
-            // Add data to Montly Change boxes
+            // Add data to Monthly Change boxes
+
+            // Value for latest month charted
+            var lastValue = series_data[series_data.length - 1].toLocaleString();
+            const currentElement = document.getElementById(`mkt_activity_current_${i}`);
+            currentElement.innerText = `${lastValue}`
+
+
+            // Percent change
             const percentageChange = calculatePercentageChange(dataset);
             if (percentageChange !== null) {
                 // Update the boxes with the percentage change for each dataset
@@ -80,6 +88,19 @@ export function DrawMarketActivityChart(code) {
                     tileElement.innerText = `${percentageChange}%`;
                     setColorBasedOnValue(tileElement, arrowElement, percentageChange);
                 }
+            }
+
+            // Difference
+            const difference = calculateDifference(dataset);
+            const diffElement = document.getElementById(`mkt_activity_diff_${i}`);
+            if (diffElement) {
+                if (difference < 0) {
+                    diffElement.innerText = "Down by " + Math.abs(difference).toLocaleString();
+                }
+                else {
+                    diffElement.innerText = "Up by " + difference.toLocaleString();
+                }
+                //setDiffColorBasedOnValue(diffElement, difference);
             }
 
         }
