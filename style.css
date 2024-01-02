@@ -198,6 +198,21 @@ h2 {
   /* Adjust margin as needed */
 }
 
+.icon-container {
+  width: 250px;
+  /* border: 3px solid #333;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.icon {
+  width: 30px;
+  padding: 1px;
+}
+
 .data-content {
   /* Ensure the content aligns correctly */
   display: flex;
@@ -211,7 +226,8 @@ h2 {
   /* Adjust title's width and margin */
   /*width: 100px;*/
   font-weight: bold;
-  font-size: 26px;
+  font-size: 24px;
+  padding-left: 10px;
 }
 
 .change-value {
