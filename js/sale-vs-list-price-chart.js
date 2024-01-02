@@ -118,7 +118,8 @@ export function DrawSaleVSListPriceChart(code) {
         }
 
         // set the series label for average list price 
-        datasets[1].label = "Average List Price";
+        if (code != "SITE") { datasets[1].label = "Average List Price"; }
+
         console.log(datasets);
 
         const chartdata = {

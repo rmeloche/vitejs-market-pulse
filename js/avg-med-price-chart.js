@@ -106,10 +106,10 @@ export function DrawAvgMedPriceChart(code) {
             const diffElement = document.getElementById(`prices_diff_${i}`);
             if (diffElement) {
                 if (difference < 0) {
-                    diffElement.innerText = "Down $" + Math.abs(difference).toLocaleString();
+                    diffElement.innerText = "(- $" + Math.abs(difference).toLocaleString() + ")";
                 }
                 else {
-                    diffElement.innerText = "Up $" + difference.toLocaleString();
+                    diffElement.innerText = "+ $" + difference.toLocaleString();
                 }
                 //setDiffColorBasedOnValue(diffElement, difference);
             }
