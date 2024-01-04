@@ -63,8 +63,8 @@ export function drawDaysOnMarketChart(code) {
             }
             var dataset = {
                 label: dataj.cols[i].label,
-                backgroundColor: colours[i - 1],
-                borderColor: colours[i - 1],
+                backgroundColor: colours[i + 1],
+                borderColor: colours[i + 1],
                 data: series_data
             }
 

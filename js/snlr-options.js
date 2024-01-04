@@ -29,7 +29,7 @@ export const snlr_options = {
                     xMax: 12,
                     yMin: 0,
                     yMax: 40,
-                    backgroundColor: 'rgba(255, 99, 132, 0.25)'
+                    backgroundColor: 'rgb(8,61,119, 0.25)'
                 },
                 box2: {
                     type: 'box',
@@ -38,7 +38,7 @@ export const snlr_options = {
                     xMax: 12,
                     yMin: 40,
                     yMax: 60,
-                    backgroundColor: 'rgba(255, 199, 132, 0.25)'
+                    backgroundColor: 'rgb(139,139,174, 0.75)'
                 },
                 box3: {
                     type: 'box',
@@ -47,7 +47,7 @@ export const snlr_options = {
                     xMax: 12,
                     yMin: 60,
                     yMax: 100,
-                    backgroundColor: 'rgba(255, 99, 32, 0.25)'
+                    backgroundColor: 'rgb(130,2,99, 0.25)'
                 },
                 label1: {
                     type: 'label',

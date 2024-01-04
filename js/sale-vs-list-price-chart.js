@@ -86,7 +86,8 @@ export function DrawSaleVSListPriceChart(code) {
             if (i == 1 || code == 'SITE') {
                 var dataset = {
                     label: dataj.cols[i].label,
-                    backgroundColor: 'rgb(0,76,109,0.1)',
+                    backgroundColor: colours[i + 1],
+                    //backgroundColor: 'rgb(0,76,109,0.1)',
                     borderColor: colours[i - 1],
                     //fill: 'origin',
                     data: series_data
@@ -97,12 +98,12 @@ export function DrawSaleVSListPriceChart(code) {
 
                 var gradient = ctx.createLinearGradient(0, 0, 0, 800);
                 gradient.addColorStop(0, 'white');
-                gradient.addColorStop(1, colours[1]);
+                gradient.addColorStop(1, colours[3]);
 
                 var dataset = {
                     label: dataj.cols[i].label,
                     backgroundColor: gradient,
-                    borderColor: colours[i - 1],
+                    borderColor: colours[i + 1],
                     fill: '-1',
                     data: series_data,
                     datalabels: {
