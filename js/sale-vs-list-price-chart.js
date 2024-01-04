@@ -86,8 +86,9 @@ export function DrawSaleVSListPriceChart(code) {
             if (i == 1 || code == 'SITE') {
                 var dataset = {
                     label: dataj.cols[i].label,
-                    backgroundColor: colours[i - 1],
+                    backgroundColor: 'rgb(0,76,109,0.1)',
                     borderColor: colours[i - 1],
+                    fill: 'origin',
                     data: series_data
                 }
             } else { //average list price data set
@@ -102,7 +103,7 @@ export function DrawSaleVSListPriceChart(code) {
                     label: dataj.cols[i].label,
                     backgroundColor: gradient,
                     borderColor: colours[i - 1],
-                    fill: '-1',
+                    fill: 'origin',
                     data: series_data,
                     datalabels: {
                         align: 'bottom',

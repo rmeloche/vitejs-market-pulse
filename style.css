@@ -94,7 +94,7 @@ h2 {
   color: #333;
   background-color: #d4e0f2;
   cursor: pointer;
-  /* border-color: #820263; */
+  border: 2px solid #aaa;
 }
 
 .btn-small {
