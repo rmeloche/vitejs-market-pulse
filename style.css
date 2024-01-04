@@ -145,6 +145,19 @@ h2 {
 }
 
 /* style for MONTHLY CHANGE section */
+#snapshot-title {
+  font-family: Arial, sans-serif;
+  /* Choose a professional font */
+  font-size: 32px;
+  /* Adjust font size as needed */
+  font-weight: bold;
+  /* Make it bold */
+  color: #333;
+  /* Choose a suitable text color */
+  /* letter-spacing: 2px; */
+  /* Add letter spacing for clarity */
+}
+
 .container-centered {
   display: flex;
   align-items: center;
