@@ -57,6 +57,16 @@ export const sale_list_price_options = {
             grid: {
                 display: false
             },
+            ticks: {
+                callback: function (value, index, ticks) {
+                    let characterLimit = 3;
+                    let label = this.getLabelForValue(value);
+                    if (label.length >= characterLimit) {
+                        return label.slice(0, label.length).substring(0, characterLimit).trim();
+                    }
+                    return label;
+                }
+            }
         },
         y: {
             ticks: {

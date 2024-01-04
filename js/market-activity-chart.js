@@ -95,15 +95,24 @@ export function DrawMarketActivityChart(code) {
             const diffElement = document.getElementById(`mkt_activity_diff_${i}`);
             if (diffElement) {
                 if (difference < 0) {
-                    diffElement.innerText = "Down by " + Math.abs(difference).toLocaleString();
+                    diffElement.innerText = "Down by " + Math.abs(difference).toLocaleString() + " compared to " + months[months.length - 2];
                 }
                 else {
-                    diffElement.innerText = "Up by " + difference.toLocaleString();
+                    diffElement.innerText = "Up by " + difference.toLocaleString() + " compared to " + months[months.length - 2];
                 }
                 //setDiffColorBasedOnValue(diffElement, difference);
             }
 
+
+
         }
+
+
+        // Set title for month being charted
+        const monthlyChangeTitleElement = document.getElementById('snapshot-title');
+        monthlyChangeTitleElement.innerText = "Monthly Snapshot for " + months[months.length - 1];
+
+
 
         console.log(datasets);
 
