@@ -26,7 +26,7 @@ export const snlr_options = {
                     type: 'box',
                     drawTime: 'beforeDatasetsDraw',
                     xMin: -1,
-                    xMax: 12,
+                    xMax: 24,
                     yMin: 0,
                     yMax: 40,
                     backgroundColor: 'rgb(8,61,119, 0.25)'
@@ -35,7 +35,7 @@ export const snlr_options = {
                     type: 'box',
                     drawTime: 'beforeDatasetsDraw',
                     xMin: -1,
-                    xMax: 12,
+                    xMax: 24,
                     yMin: 40,
                     yMax: 60,
                     backgroundColor: 'rgb(139,139,174, 0.75)'
@@ -44,7 +44,7 @@ export const snlr_options = {
                     type: 'box',
                     drawTime: 'beforeDatasetsDraw',
                     xMin: -1,
-                    xMax: 12,
+                    xMax: 24,
                     yMin: 60,
                     yMax: 100,
                     backgroundColor: 'rgb(130,2,99, 0.25)'
