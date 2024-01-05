@@ -132,11 +132,40 @@ export const snlr_options = {
 };
 
 
+
+function drawNeedle(radius, radianAngle) {
+    var canvas = document.getElementById("snlr_dial");
+    var ctx = canvas.getContext('2d');
+    var cw = canvas.offsetWidth;
+    var ch = canvas.offsetHeight;
+    var cx = cw / 2;
+    var cy = ch - (ch / 4);
+
+    ctx.translate(cx, cy);
+    ctx.rotate(radianAngle);
+    ctx.beginPath();
+    ctx.moveTo(0, -5);
+    ctx.lineTo(radius - 80, 0);
+    ctx.lineTo(0, 5);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+    ctx.rotate(-radianAngle);
+    ctx.translate(-cx, -cy);
+    ctx.beginPath();
+    ctx.arc(cx, cy, 7, 0, Math.PI * 2);
+    ctx.fill();
+}
+
 export const snlr_dial_options = {
     cutout: 30,
     circumference: 180,
     rotation: 270,
     aspectRatio: 1.5,
+    animation: {
+        onComplete: function () {
+            drawNeedle(150, 260 * Math.PI / 180);
+        }
+    },
     plugins: {
         tooltip: {
             enabled: false
@@ -149,6 +178,8 @@ export const snlr_dial_options = {
                 return context.chart.data.labels[context.dataIndex];
             },
             color: '#fff',
-        },
+        }
     }
 };
+
+

@@ -63,7 +63,6 @@ export function drawSNLRChart(code) {
 
             }
 
-            // only put datalabels on first series
             var dataset = {
                 label: dataj.cols[i].label,
                 backgroundColor: colours[i + 1],
@@ -109,6 +108,7 @@ export function drawSNLRChart(code) {
                 labels: ['Buyers', 'Balanced', 'Sellers'],
                 datasets: [{
                     data: [50, 50, 50],
+                    needleValue: lastValue,
                     backgroundColor: [
                         '#004c6d',
                         'rgb(54, 162, 235)',
