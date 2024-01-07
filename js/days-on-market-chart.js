@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 import { dom_options } from "./days-on-market-options.js";
-import { colours, months_to_show } from './helpers.js'
+import { colours, months_to_show, calculateDifference, calculatePercentageChange, setColorBasedOnValue } from './helpers.js'
 
 export function drawDaysOnMarketChart(code) {
 
@@ -69,6 +69,41 @@ export function drawDaysOnMarketChart(code) {
             }
 
             datasets.push(dataset);
+
+            const tileElement = document.getElementById('days_on_market_box');
+            tileElement.style.display = 'block';
+
+            // Value for latest month charted
+            var lastValue = series_data[series_data.length - 1].toLocaleString();
+            const currentElement = document.getElementById('days_on_market_current');
+            currentElement.innerText = `${lastValue}`
+
+
+            // Percent change
+            const percentageChange = calculatePercentageChange(dataset);
+            if (percentageChange !== null) {
+                // Update the boxes with the percentage change for each dataset
+                const changeElement = document.getElementById('days_on_market_chg');
+                const arrowElement = document.getElementById('days_on_market_arrow');
+                if (changeElement) {
+                    changeElement.innerText = `${percentageChange}%`;
+                    setColorBasedOnValue(changeElement, arrowElement, percentageChange);
+                }
+            }
+
+            // Difference
+            const difference = calculateDifference(dataset);
+            const diffElement = document.getElementById('days_on_market_diff');
+            if (diffElement) {
+                if (difference < 0) {
+                    diffElement.innerText = "Down by " + Math.abs(difference).toLocaleString() + " compared to " + months[months.length - 2];
+                }
+                else {
+                    diffElement.innerText = "Up by " + difference.toLocaleString() + " compared to " + months[months.length - 2];
+                }
+                //setDiffColorBasedOnValue(diffElement, difference);
+            }
+
 
         }
         console.log(datasets);
