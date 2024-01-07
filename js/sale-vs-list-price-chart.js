@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto';
 import { sale_list_price_options } from "./sale-vs-list-price-options.js";
-import { colours, months_to_show } from './helpers.js'
+import { colours, months_to_show, calculateDifference, calculatePercentageChange, setColorBasedOnValue } from './helpers.js'
 
 export var lowest_value;
 export var highest_value;
@@ -117,10 +117,50 @@ export function DrawSaleVSListPriceChart(code) {
             // we don't have sales/list ratio for site data, get out of loop
             if (code == "SITE") break;
 
+            if (i == 2) {
+                // Add data to Monthly Change boxes
+                const tileElement = document.getElementById('prices_list_box');
+                tileElement.style.display = 'block';
+
+                // Value for latest month charted
+                var lastValue = series_data[series_data.length - 1].toLocaleString();
+                const currentElement = document.getElementById('prices_list_current');
+                currentElement.innerText = `${lastValue}`
+
+
+                // Percent change
+                const percentageChange = calculatePercentageChange(dataset);
+                if (percentageChange !== null) {
+                    // Update the boxes with the percentage change for each dataset
+                    const changeElement = document.getElementById('prices_list_chg');
+                    const arrowElement = document.getElementById('prices_list_arrow');
+                    if (changeElement) {
+                        changeElement.innerText = `${percentageChange}%`;
+                        setColorBasedOnValue(changeElement, arrowElement, percentageChange);
+                    }
+                }
+
+                // Difference
+                const difference = calculateDifference(dataset);
+                const diffElement = document.getElementById('prices_list_diff');
+                if (diffElement) {
+                    if (difference < 0) {
+                        diffElement.innerText = "Down by " + Math.abs(difference).toLocaleString() + " compared to " + months[months.length - 2];
+                    }
+                    else {
+                        diffElement.innerText = "Up by " + difference.toLocaleString() + " compared to " + months[months.length - 2];
+                    }
+                    //setDiffColorBasedOnValue(diffElement, difference);
+                }
+
+
+            }
+
         }
 
         // set the series label for average list price 
         if (code != "SITE") { datasets[1].label = "Average List Price"; }
+
 
         console.log(datasets);
 
