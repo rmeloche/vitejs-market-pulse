@@ -114,17 +114,23 @@ export function DrawSaleVSListPriceChart(code) {
 
             datasets.push(dataset);
 
-            // we don't have sales/list ratio for site data, get out of loop
-            if (code == "SITE") break;
+            // we don't have sales/list ratio for site data, show message and exit
+            const currentElement = document.getElementById('prices_list_current');
+            const changeElement = document.getElementById('prices_list_chg');
+            const arrowElement = document.getElementById('prices_list_arrow');
+            const diffElement = document.getElementById('prices_list_diff');
+            if (code == "SITE") {
+                //tileElement.style.display = 'none';
+                currentElement.innerHTML = "List Price data not available";
+                changeElement.innerHTML = "";
+                arrowElement.style.display = 'none';
+                diffElement.innerHTML = "";
+                break;
+            }
 
             if (i == 2) {
-                // Add data to Monthly Change boxes
-                const tileElement = document.getElementById('prices_list_box');
-                tileElement.style.display = 'block';
-
                 // Value for latest month charted
                 var lastValue = series_data[series_data.length - 1].toLocaleString();
-                const currentElement = document.getElementById('prices_list_current');
                 currentElement.innerText = `${lastValue}`
 
 
@@ -132,8 +138,7 @@ export function DrawSaleVSListPriceChart(code) {
                 const percentageChange = calculatePercentageChange(dataset);
                 if (percentageChange !== null) {
                     // Update the boxes with the percentage change for each dataset
-                    const changeElement = document.getElementById('prices_list_chg');
-                    const arrowElement = document.getElementById('prices_list_arrow');
+                    arrowElement.style.display = 'block';
                     if (changeElement) {
                         changeElement.innerText = `${percentageChange}%`;
                         setColorBasedOnValue(changeElement, arrowElement, percentageChange);
@@ -142,7 +147,6 @@ export function DrawSaleVSListPriceChart(code) {
 
                 // Difference
                 const difference = calculateDifference(dataset);
-                const diffElement = document.getElementById('prices_list_diff');
                 if (diffElement) {
                     if (difference < 0) {
                         diffElement.innerText = "Down by " + Math.abs(difference).toLocaleString() + " compared to " + months[months.length - 2];

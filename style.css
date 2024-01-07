@@ -297,11 +297,6 @@ h2 {
   border-bottom: 20px solid #355e3b;
 }
 
-#prices_list_box,
-#days_on_market_box {
-  display: none;
-}
-
 .dial {
   width: 200px;
 }
