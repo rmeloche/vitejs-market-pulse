@@ -8,18 +8,20 @@ const formatter = new Intl.NumberFormat("en-CA", {
 
 
 export const avg_med_price_options = {
+    //categoryPercentage: 1.0, 
+    barPercentage: 0.8,
     plugins: {
         legend: {
             position: 'top',
-            color: '#000000',
             labels: {
                 usePointStyle: false,
+                color: '#000'
             }
         },
         title: {
             display: true,
             text: 'Prices',
-            fontColor: 'rgb(0, 18, 58)',
+            color: '#000',
             padding: 5,
             font: {
                 size: '18'

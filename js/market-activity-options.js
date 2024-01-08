@@ -4,15 +4,15 @@ export const activity_options = {
     plugins: {
         legend: {
             position: 'top',
-            color: '#000000',
             labels: {
                 usePointStyle: false,
+                color: '#000'
             }
         },
         title: {
             display: true,
             text: 'Market Activity',
-            fontColor: 'rgb(0, 18, 58)',
+            color: '#000',
             padding: 5,
             font: {
                 size: '18'
